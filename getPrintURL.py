@@ -8,19 +8,20 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import CashbillService,PopbillException
+from popbill import StatementService, PopbillException
 
-cashbillService =  CashbillService(testValue.LinkID,testValue.SecretKey)
-cashbillService.IsTest = testValue.IsTest
-
+statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService.IsTest = testValue.IsTest
   
 try:
-    print("현금영수증 인쇄 팝업 URL")
+    print("전자명세서 인쇄 URL")
 
-    MgtKey = "20150326-01" # 현금영수증 문서관리번호
+    ItemCode = 121 # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
+    MgtKey = "20150326-01" # 전자명세서 문서관리번호
     UserID = testValue.testUserID
 
-    url = cashbillService.getPrintURL(testValue.testCorpNum,MgtKey,UserID)
+    url = statementService.getPrintURL(testValue.testCorpNum,ItemCode,MgtKey,UserID)
     print("URL: %s" % url)
+
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

@@ -8,15 +8,17 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import CashbillService, PopbillException
+from popbill import StatementService, PopbillException
 
-cashbillService =  CashbillService(testValue.LinkID,testValue.SecretKey)
-cashbillService.IsTest = testValue.IsTest
+statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService.IsTest = testValue.IsTest
   
 try:
-    print("현금영수증 발행 단가 확인")
+    print("전자명세서 발행 단가 확인")
 
-    unitCost = cashbillService.getUnitCost(testValue.testCorpNum)
+    ItemCode = 121  # 명세서 코드 [121-거래명세서], [122-청구서], [123-견적서], [124-발주서], [125-입금표], [126-영수증]
+    
+    unitCost = statementService.getUnitCost(testValue.testCorpNum, ItemCode)
 
     print("단가: %f" % unitCost)
     

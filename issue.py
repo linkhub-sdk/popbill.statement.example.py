@@ -8,17 +8,18 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import CashbillService,PopbillException
+from popbill import StatementService, PopbillException
 
-cashbillService =  CashbillService(testValue.LinkID,testValue.SecretKey)
-cashbillService.IsTest = testValue.IsTest
+statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService.IsTest = testValue.IsTest
   
 try:
-    print("현금영수증 발행")
-    
-    MgtKey = "20150326-04" # 현금영수증 문서관리번호
+    print("전자명세서 발행")
 
-    result = cashbillService.issue(testValue.testCorpNum,MgtKey, "발행메모")
+    ItemCode = 121 # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
+    MgtKey = "20150326-01" # 전자명세서 문서관리번호
+
+    result = statementService.issue(testValue.testCorpNum,ItemCode,MgtKey)
     print("처리결과 : [%d] %s" % (result.code,result.message))
     
 except PopbillException as PE:

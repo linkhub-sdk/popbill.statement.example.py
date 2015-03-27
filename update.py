@@ -8,46 +8,83 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import Cashbill,CashbillService,PopbillException
+from popbill import Statement,StatementDetail,StatementService,PopbillException
 
-cashbillService =  CashbillService(testValue.LinkID,testValue.SecretKey)
-cashbillService.IsTest = testValue.IsTest
-
+statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService.IsTest = testValue.IsTest
+  
 try:
-    print("현금영수증 수정 - 임서저장 상태인 경우만 가능")
+    print("전자명세서 1건 수정 - 임시저장 상태에서만 가능")
 
-    cashbill = Cashbill(mgtKey = "20150326-01", # 문서관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 공급자별 고유번호 생성
-                        tradeType = "승인거래", # 현금영수증 형태, '승인거래'/'취소거래'
-                        tradeUsage = "소득공제용", # 거래유형, '소득공제용'/'지출증빙용'
-                        taxationType = "과세", # 과세형태, '과세'/'비과세'
-                        
-                        identityNum = "01011112222", # 거래처 식별번호
-                        # 거래유형이 '소득공제용' - 주민등록/핸드폰/카드 번호 입력 
-                        # 거래유형이 '지출증빙용' - 사업자번호 기재
-                        
-                        franchiseCorpNum = "1234567890", # 발행자 사업자번호
-                        franchiseCorpName = "발행자 상호_수정", 
-                        franchiseCEOName = "발행 대표자 성명_수정",
-                        franchiseAddr = "발행자 주소",
-                        franchiseTEL = "07075103710",
-                        
-                        smssendYN = False, # SMS 전송 여부
-                        customerName = "고객명",
-                        itemName = "상품명",
-                        orderNumber = "주문번호",
-                        email = "test@test.com",
-                        hp = "01043255117",
-                        fax = "07075103710",
-                        
-                        supplyCost = "15000", # 공급가액
-                        tax = "5000", # 세액
-                        serviceFee = "0", # 봉사료
-                        totalAmount = "20000" # 거래금액, 공급가액+세액+봉사료
-                        )
+    statement = Statement(writeDate = "20150326", # 작성일자 yyyyMMdd
+                          purposeType = "영수", # '영수'/'청구'
+                          taxType = "과세", # 세금형태, '과세'/'영세'/'면세'
+                          formCode = "", # 맞춤양식코드, 미기재시 기본양식으로 처리
+                          itemCode = 121, # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
+                          mgtKey = "20150326-01", # 전자명세서 관리번호 [수정시 변경되지 않음] 
+                          senderCorpNum = testValue.testCorpNum, #공급자 사업자번호, '-' 제외 10자리 
+                          senderCorpName = "공급자 상호_수정",
+                          senderAddr = "공급자 주소",
+                          senderCEOName = "공급자 대표자 성명",
+                          senderTaxRegID = "1234", # 공급자 종사업장번호, 필요시 4자리 숫자 기재
+                          senderBizClass = "업종",
+                          senderBizType = "업태",
+                          senderContactName = "공급자 담당자명",
+                          senderEmail = "test@test.com",
+                          senderTEL = "070-7510-3710",
+                          senderHP = "010-000-222",
 
-    MgtKey = '20150326-01' # 수정하고자하는 현금영수증 문서관리번호
-    result = cashbillService.update(testValue.testCorpNum,MgtKey,cashbill)
+                          receiverCorpNum = "8888888888", #공급받는자 사업자번호 '-'제외 10자리
+                          receiverCorpName = "공급받는자 상호",
+                          receiverCEOName = "공급받는자 대표자 성명",
+                          receiverAddr = "공급받는자 주소",
+                          receiverTaxRegID = "1212", #공급받는자 종사업장번호, 필요시 4자리 숫자 기재
+                          receiverBizClass = "공급받는자 업종",
+                          receiverBizType = "공급받는자 업태",
+                          receiverContactName = "공급받는자 담당자명",
 
+                          receiverEmail = "test@test.com",
+                          receiverTEL = "070111222",
+                          receiverHP = "010-111-222",
+
+                          supplyCostTotal = "20000", # 공급가액 합계
+                          taxTotal = "2000", # 세액 합계
+                          totalAmount = "22000", # 합계금액, 공금가액+세액
+                          serialNum = "123", # 기재 상 '일련번호' 항목
+                          remark1 = "비고1", 
+                          remark2 = "비고2",
+                          remark3 = "비고3",
+
+                          businessLicenseYN = False, # 사업자등록증 첨부 여부
+                          bankBookYN = False, # 통장사본 첨부 여부 
+
+                          # 상세항목(품목) 정보
+                          detailList = [ 
+                                            StatementDetail(serialNum = 1, #일련번호, 1부터 순차기재
+                                                            itemName = "품목1", 
+                                                            purchaseDT = "20150323", # 거래일자
+                                                            qty = 1, # 수량
+                                                            supplyCost = "20000", # 공급가액
+                                                            tax = "2000" #세액 
+                                                            ),
+                                            StatementDetail(serialNum = 2, #일련번호, 1부터 순차기재
+                                                            itemName = "품목2"
+                                                            )
+                                        ],
+                          # 추가속성정보, 명세서 종류별 추가적인 속성을{key:value}형식의 Dictionary로 정의
+                          # 자세한 정보는 "전자명세서 API 연동매뉴얼 > [5.2. 기본양식 추가속성 테이블] 참조
+                          propertyBag = { 
+                                        'Balance': '20000', # 전잔액
+                                        'Deposit' : '5000', # 입금액
+                                        'CBalance': '25000' # 현잔액
+                                        }
+                          )
+
+    ItemCode = 121 # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증] 
+    mgtKey = "20150326-01" # 수정할 전자명세서 문서관리번호
+
+    result = statementService.update(testValue.testCorpNum, ItemCode, mgtKey, statement)
+    
     print("처리결과 : [%d] %s" % (result.code,result.message))
     
 except PopbillException as PE:

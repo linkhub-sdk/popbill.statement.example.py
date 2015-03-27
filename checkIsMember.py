@@ -8,14 +8,14 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import CashbillService, PopbillException
+from popbill import StatementService, PopbillException
 
-cashbillService =  CashbillService(testValue.LinkID,testValue.SecretKey)
-cashbillService.IsTest = testValue.IsTest
+statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService.IsTest = testValue.IsTest
 
 try:
     print("연동회원 가입여부 확인")
-    result = cashbillService.checkIsMember(testValue.testCorpNum)
+    result = statementService.checkIsMember(testValue.testCorpNum)
     print("가입여부 : %d %s" % (result.code,result.message) )
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

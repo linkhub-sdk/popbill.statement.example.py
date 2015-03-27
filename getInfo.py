@@ -8,35 +8,41 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import CashbillService,PopbillException
+from popbill import StatementService, PopbillException
 
-cashbillService =  CashbillService(testValue.LinkID,testValue.SecretKey)
-cashbillService.IsTest = testValue.IsTest
+statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService.IsTest = testValue.IsTest
   
 try:
-    print("현금영수증 상태/요약 정보 확인")
+    print("전자명세서 상태/요약 정보 확인")
     
-    MgtKey = "20150326-01" # 현금영수증 문서관리번호
+    ItemCode = 121 # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
+    MgtKey = "20150326-01" # 전자명세서 문서관리번호
  
-    cashbillInfo = cashbillService.getInfo(testValue.testCorpNum,MgtKey)
+    statementInfo = statementService.getInfo(testValue.testCorpNum,ItemCode,MgtKey)
 
-    print ("itemKey : %s" % (cashbillInfo.itemKey))
-    print ("mgtKey : %s" % (cashbillInfo.mgtKey))
-    print ("tradeDate : %s" % (cashbillInfo.tradeDate))
-    print ("issueDT : %s" % (cashbillInfo.issueDT))
-    print ("regDT : %s" % (cashbillInfo.regDT))
-    print ("taxationType : %s" % (cashbillInfo.taxationType))
-    print ("totalAmount : %s" % (cashbillInfo.totalAmount))
-    print ("tradeUsage : %s" % (cashbillInfo.tradeUsage))
-    print ("tradeType : %s" % (cashbillInfo.tradeType))
-    print ("identityNum : %s" % (cashbillInfo.identityNum))
-    print ("itemName : %s" % (cashbillInfo.itemName))
-    print ("customerName : %s" % (cashbillInfo.customerName))
-    print ("stateCode : %s" % (cashbillInfo.stateCode))
-    print ("stateDT : %s" % (cashbillInfo.stateDT))
-    print ("printYN : %s" % (cashbillInfo.printYN))
+    print ("itemCode : %s" % (statementInfo.itemCode))
+    print ("itemKey : %s" % (statementInfo.itemKey))
+    print ("invoiceNum : %s" % (statementInfo.invoiceNum))
+    print ("mgtKey : %s" % (statementInfo.mgtKey))
+    print ("taxType : %s" % (statementInfo.taxType))
+    print ("writeDate : %s" % (statementInfo.writeDate))
+    print ("regDT : %s" % (statementInfo.regDT))
 
-    ''' CashbillInfo 구성 : 항목별 자세한 내용은 "현금영수증 API 연동매뉴얼 > [4.2 현금영수증 상태정보 구성]" 참조.'''
-    
+    print ("senderCorpNum : %s" % (statementInfo.senderCorpNum))
+    print ("senderCorpName : %s" % (statementInfo.senderCorpName))
+    print ("receiverCorpNum : %s" % (statementInfo.receiverCorpNum))
+    print ("receiverCorpName : %s" % (statementInfo.receiverCorpName))
+
+    print ("supplyCostTotal : %s" % (statementInfo.supplyCostTotal))
+    print ("taxTotal : %s" % (statementInfo.taxTotal))
+    print ("purposeType : %s" % (statementInfo.purposeType))
+    print ("isseuDT : %s" % (statementInfo.isseuDT))
+    print ("stateCode : %s" % (statementInfo.stateCode))
+    print ("stateDT : %s" % (statementInfo.stateDT))
+    print ("stateMemo : %s" % (statementInfo.stateMemo))
+    print ("openYN : %s" % (statementInfo.openYN))
+    print ("openDT : %s" % (statementInfo.openDT))
+
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

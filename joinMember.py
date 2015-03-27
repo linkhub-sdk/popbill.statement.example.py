@@ -8,10 +8,10 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import JoinForm,CashbillService,PopbillException
+from popbill import JoinForm,StatementService,PopbillException
       
-cashbillService =  CashbillService(testValue.LinkID,testValue.SecretKey)
-cashbillService.IsTest = testValue.IsTest
+statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService.IsTest = testValue.IsTest
 
 newMember = JoinForm(CorpNum = testValue.testCorpNum,
                         CorpName = "테스트가입상호",
@@ -29,7 +29,7 @@ newMember = JoinForm(CorpNum = testValue.testCorpNum,
                         ContactEmail = "test@test.com")
 try:
     print("연동회원 가입")
-    result = cashbillService.joinMember(newMember)
+    result = statementService.joinMember(newMember)
     print("처리결과 : %d %s" % (result.code,result.message) )
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

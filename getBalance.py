@@ -8,15 +8,15 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import CashbillService,PopbillException
+from popbill import StatementService, PopbillException
 
-cashbillService =  CashbillService(testValue.LinkID,testValue.SecretKey)
-cashbillService.IsTest = testValue.IsTest
+statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService.IsTest = testValue.IsTest
   
 try:
     print("회원 잔여포인트 확인")
 
-    balance = cashbillService.getBalance(testValue.testCorpNum)
+    balance = statementService.getBalance(testValue.testCorpNum)
 
     print("회원잔액 : %f" % balance)
     

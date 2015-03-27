@@ -14,13 +14,16 @@ statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
   
 try:
-    print("전자명세서 공급받는자 인쇄 팝업 URL")
-
+    print("전자명세서 파일첨부")
+    
     ItemCode = 121 # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
-    MgtKey = "20150326-01" # 전자명세서 문서관리번호
+    MgtKey = "20150326-01" # 전자명세서 문서관리번호 
+    FilePath = "test.jpeg"  # 접근가능한 파일의 파일 경로.
     UserID = testValue.testUserID
 
-    url = statementService.getEPrintURL(testValue.testCorpNum,ItemCode,MgtKey,UserID)
-    print("URL: %s" % url)
+    result = statementService.attachFile(testValue.testCorpNum,ItemCode,MgtKey,FilePath,UserID)
+
+    print("처리결과 : [%d] %s" % (result.code,result.message))
+    
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))
