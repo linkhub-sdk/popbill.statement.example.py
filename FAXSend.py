@@ -8,20 +8,27 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import Statement,StatementDetail,StatementService,PopbillException
+from popbill import Statement, StatementDetail, StatementService, PopbillException
 
 statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 try:
-    print("전자명세서 1건 임시저장")
+    print("=" * 15 + " 선팩스 전송 " + "=" * 15)
 
+    # 팩스발신번호
+    SendNum = "070-7510-3710"
+
+    # 팩스수신번호
+    ReceiveNum = "070-111-222"
+
+    # 전자명세서 정보
     statement = Statement(writeDate = "20150326",       # 작성일자 yyyyMMdd
                           purposeType = "영수",          # '영수'/'청구'
                           taxType = "과세",              # 세금형태, '과세'/'영세'/'면세'
                           formCode = "",                # 맞춤양식코드, 미기재시 기본양식으로 처리
                           itemCode = 121,               # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
-                          mgtKey = "20150326-01",       # 파트너 부여 전자명세서 관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 공급자별 고유번호 생성
+                          mgtKey = "20160729-01",       # 파트너 부여 전자명세서 관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 공급자별 고유번호 생성
                           senderCorpNum = testValue.testCorpNum, #공급자 사업자번호, '-' 제외 10자리
                           senderCorpName = "공급자 상호",
                           senderAddr = "공급자 주소",
@@ -81,9 +88,9 @@ try:
                                         }
                           )
 
-    result = statementService.register(testValue.testCorpNum,statement)
+    result = statementService.FAXSend(testValue.testCorpNum, statement, SendNum, ReceiveNum, testValue.testUserID)
 
-    print("처리결과 : [%d] %s" % (result.code,result.message))
+    print("팩스 접수번호 : " + result)
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

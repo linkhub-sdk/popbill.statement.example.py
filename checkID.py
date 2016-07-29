@@ -14,13 +14,13 @@ statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 try:
-    print("전자명세서 발행취소")
+    print("=" * 15 + " 회원아이디 중복확인 " + "=" * 15)
 
-    ItemCode = 121          # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
-    MgtKey = "20150326-01"  # 전자명세서 문서관리번호
+    # 중복확인할 아이디
+    memberID = "testkorea"
 
-    result = statementService.cancel(testValue.testCorpNum, MgtKey, "발행취소메모")
-    print("처리결과 : [%d] %s" % (result.code,result.message))
+    response = statementService.checkID(memberID)
 
+    print("처리결과 : [%d] %s" % (response.code, response.message))
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))
