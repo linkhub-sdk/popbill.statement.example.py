@@ -42,6 +42,20 @@ try:
 
     response = statementService.search(testValue.testCorpNum, DType, SDate, EDate, State, ItemCode, Page, PerPage, Order, testValue.testUserID)
 
+    print("code (응답코드) : %s " % response.code)
+    print("message (응답메시지) : %s " % response.message)
+    print("total (검색결과 건수) : %s " % response.total)
+    print("perPage (페이지당 검색개수) : %s " % response.perPage)
+    print("pageNum (페에지 번호) : %s " % response.pageNum)
+    print("pageCount (페이지 개수) : %s \n" % response.pageCount)
+
+    i = 1
+    for info in response.list :
+        print("====== 전자명세서 정보 [%d] ======"% i)
+        for key, value in info.__dict__.items():
+            print("%s : %s" % (key, value))
+        i += 1
+        print()
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))
