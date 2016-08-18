@@ -20,7 +20,7 @@ try:
     DType = "W"
 
     # 시작일자, 표시형식(yyyyMMdd)
-    SDate = "20160601"
+    SDate = "20160701"
 
     # 종료일자, 표시형식(yyyyMMdd)
     EDate = "20160831"
@@ -40,7 +40,10 @@ try:
     # 정렬방향 D-내림차순, A-오름차순
     Order = "D"
 
-    response = statementService.search(testValue.testCorpNum, DType, SDate, EDate, State, ItemCode, Page, PerPage, Order, testValue.testUserID)
+    # 거래처 정보, 거래처 상호 또는 사업자등록번호 기재, 공백처리시 전체조회
+    QString = ""
+
+    response = statementService.search(testValue.testCorpNum, DType, SDate, EDate, State, ItemCode, Page, PerPage, Order, testValue.testUserID, QString)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
