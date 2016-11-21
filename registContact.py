@@ -8,26 +8,53 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import ContactInfo,StatementService,PopbillException
+from popbill import ContactInfo, StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
-newContact = ContactInfo (
-                        id = "testkorea_0728_01",
-                        pwd = "popbill",
-                        personName = "정씨네",
-                        tel = "010-1234-1234",
-                        hp = "010-4324-5117",
-                        fax = "070-7510-3710",
-                        email = "code@linkhub.co.kr",
-                        searchAllAllowYN = True,
-                        mgrYN = True
-                        )
+'''
+연동회원의 담당자를 신규로 등록합니다.
+'''
+
 try:
     print("=" * 15 + " 담당자 등록 " + "=" * 15)
 
-    result = statementService.registContact(testValue.testCorpNum, newContact, testValue.testUserID)
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    # 담당자 정보
+    newContact = ContactInfo (
+
+        # 아이디
+        id = "testkorea_1117",
+
+        # 비밀번호
+        pwd = "this_is_password",
+
+        # 담당자명
+        personName = "정대리",
+
+        # 연락처
+        tel = "010-4304-2991",
+
+        # 휴대폰번호
+        hp = "010-4304-2991",
+
+        # 팩스번호
+        fax = "070-4324-2991",
+
+        # 메일주소
+        email = "dev@linkhub.co.kr",
+
+        # 회사조회 권한여부, True(회사조회) False(개인조회)
+        searchAllAllowYN = True
+    )
+
+    result = statementService.registContact(CorpNum, newContact, UserID)
 
     print("처리결과 : %d %s" % (result.code,result.message) )
 except PopbillException as PE:

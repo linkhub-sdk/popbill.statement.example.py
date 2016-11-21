@@ -13,6 +13,12 @@ from popbill import StatementService,PopbillException
 statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
+'''
+검색조건을 사용하여 전자명세서 목록을 조회합니다.
+- 응답항목에 대한 자세한 사항은 "[전자명세서 API 연동매뉴얼] > 3.3.3. Search (목록 조회)"
+  를 참조하시기 바랍니다.
+'''
+
 try:
     print("=" * 15 + " 문서 조회 " + "=" * 15)
 
@@ -20,10 +26,10 @@ try:
     DType = "W"
 
     # 시작일자, 표시형식(yyyyMMdd)
-    SDate = "20160701"
+    SDate = "20161001"
 
     # 종료일자, 표시형식(yyyyMMdd)
-    EDate = "20160831"
+    EDate = "20161131"
 
     # 명세서 상태코드, 2,3번째 자리에 와일드카드(*) 사용 가능
     State = ["2**", "3**"]
@@ -43,7 +49,8 @@ try:
     # 거래처 정보, 거래처 상호 또는 사업자등록번호 기재, 공백처리시 전체조회
     QString = ""
 
-    response = statementService.search(testValue.testCorpNum, DType, SDate, EDate, State, ItemCode, Page, PerPage, Order, testValue.testUserID, QString)
+    response = statementService.search(testValue.testCorpNum, DType, SDate, EDate,
+            State, ItemCode, Page, PerPage, Order, testValue.testUserID, QString)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
@@ -58,7 +65,7 @@ try:
         for key, value in info.__dict__.items():
             print("%s : %s" % (key, value))
         i += 1
-        print()
+        print
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

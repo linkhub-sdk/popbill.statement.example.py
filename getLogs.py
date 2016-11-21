@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# code for console Encoding difference. Dont' mind on it 
+# code for console Encoding difference. Dont' mind on it
 import sys
 import imp
 imp.reload(sys)
@@ -10,25 +10,29 @@ import testValue
 
 from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
-  
-try:
-    print("전자명세서 처리이력 목록")
-    
-    ItemCode = 121 # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
-    MgtKey = "20150326-01" # 전자명세서 문서관리번호
-   
-    LogList = statementService.getLogs(testValue.testCorpNum,ItemCode,MgtKey)
 
-    ''' StatementLog 구성: 
-            docLogType : 이력유형
-            log : 문서이력 설명
-            procType : 처리유형
-            procCorpName : 처리회사명
-            procMemo : 처리시 메모
-            regDT : 처리일시
-    '''
+'''
+전자명세서 상태 변경이력을 확인합니다.
+- 상태 변경이력 확인(GetLogs API) 응답항목에 대한 자세한 정보는 "[전자명세서 API 연동매뉴얼] >
+  3.3.4 GetLogs (상태 변경이력 확인)" 을 참조하시기 바랍니다.
+'''
+
+try:
+    print("=" * 15 + " 전자명세서 상태변경 이력 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
+    ItemCode = 121
+
+    # 전자명세서 문서관리번호
+    MgtKey = "20161121-01"
+
+    LogList = statementService.getLogs(CorpNum, ItemCode, MgtKey)
+
     i = 1
     for f in LogList:
         print("%d:" % i)

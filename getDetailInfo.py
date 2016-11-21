@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# code for console Encoding difference. Dont' mind on it 
+# code for console Encoding difference. Dont' mind on it
 import sys
 import imp
 imp.reload(sys)
@@ -10,18 +10,29 @@ import testValue
 
 from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
+'''
+전자명세서 1건의 상세정보를 조회합니다.
+- 응답항목에 대한 자세한 사항은 "[전자명세서 API 연동매뉴얼] > 4.1. 전자명세서 구성" 을
+  참조하시기 바랍니다.
+'''
+
 try:
-    print("전자명세서 상세정보 확인")
-    
-    ItemCode = 121 # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
-    MgtKey = "20150326-01" #파트너 부여 전자명세서 문서관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 공급자별 고유번호 생성
- 
-    #전자명세서 임시저장시 구성한 정보를 반환한다.
-    statement = statementService.getDetailInfo(testValue.testCorpNum,ItemCode,MgtKey)
-    
+    print("=" * 15 + " 전자명세서 상세정보 확인 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
+    ItemCode = 121
+
+    # 전자명세서 문서관리번호
+    MgtKey = "20161121-01"
+
+    statement = statementService.getDetailInfo(CorpNum, ItemCode, MgtKey)
+
     print ("itemCode : %s" % (statement.itemCode))
     print ("mgtKey : %s" % (statement.mgtKey))
     print ("invoiceNum : %s" % (statement.invoiceNum))
@@ -78,10 +89,11 @@ try:
         #print ("       spare3 : %s "% statement.detailList[n].spare3)
         #print ("       spare4 : %s "% statement.detailList[n].spare4)
         #print ("       spare5 : %s "% statement.detailList[n].spare5)
-    
+
     if statement.propertyBag is not None:
         print ("propertyBag : ")
         for key, value in statement.propertyBag.__dict__.items():
             print("       %s : %s" % (key,value))
+
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

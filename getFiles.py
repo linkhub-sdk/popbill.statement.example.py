@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# code for console Encoding difference. Dont' mind on it 
+# code for console Encoding difference. Dont' mind on it
 import sys
 import imp
 imp.reload(sys)
@@ -10,23 +10,28 @@ import testValue
 
 from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
-  
-try:
-    print("전자명세서 첨부파일 목록")
-    
-    ItemCode = 121 # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
-    MgtKey = "20150326-01" # 전자명세서 문서관리번호
 
-    fileList = statementService.getFiles(testValue.testCorpNum,ItemCode,MgtKey)
-    
-    ''' attachedFile 구성: 
-            attachedFile : #파일 삭제시에 활용되는 파일 ID
-            regDT :    #등록일시 yyyyMMddHHmmss
-            displayName : 표시명
-            serialNum : 일련번호
-    '''
+'''
+전자명세서에 첨부된 파일의 목록을 확인합니다.
+- 응답항목 중 파일아이디(AttachedFile) 항목은 파일삭제(DeleteFile API) 호출시 이용할 수 있습니다.
+'''
+
+try:
+    print("=" * 15 + " 전자명세서 첨부파일 목록 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
+    ItemCode = 121
+
+    # 전자명세서 문서관리번호
+    MgtKey = "20161121-01"
+
+    fileList = statementService.getFiles(CorpNum, ItemCode, MgtKey)
+
     i = 1
     for f in fileList:
         print("%d:" % i)

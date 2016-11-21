@@ -8,20 +8,37 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import StatementService,PopbillException
+from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
+'''
+전자명세서에 다른 전자명세서 1건을 첨부합니다.
+'''
+
 try:
-    print( "=" * 15 + " 다른전자명세서 첨부 " + "=" * 15)
+    print( "=" * 15 + " 다른 전자명세서 첨부 " + "=" * 15)
 
-    ItemCode = "121"          # 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서 125-입금표, 126-영수증
-    MgtKey = "r7aobdc60n"     # 전자명세서 문서관리번호
-    SubItemCode = "121"       # 첨부할 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서 125-입금표, 126-영수증
-    SubMgtKey = "fbrdavxpsn"  # 첨부할 전자명세서 문서관리번호
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
 
-    result = statementService.attachStatement(testValue.testCorpNum, ItemCode, MgtKey, SubItemCode, SubMgtKey, testValue.testUserID)
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    # 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서 125-입금표, 126-영수증
+    ItemCode = "121"
+
+    # 전자명세서 문서관리번호
+    MgtKey = "20161121-01"
+
+    # 첨부할 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서 125-입금표, 126-영수증
+    SubItemCode = "121"
+
+    # 첨부할 전자명세서 문서관리번호
+    SubMgtKey = "20161121-02"
+
+    result = statementService.attachStatement(CorpNum, ItemCode, MgtKey, SubItemCode, SubMgtKey, UserID)
 
     print("처리결과 : [%d] %s" % (result.code,result.message))
 except PopbillException as PE:
