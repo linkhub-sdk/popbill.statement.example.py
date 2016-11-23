@@ -28,7 +28,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서관리번호
-    MgtKey = "20150326-01"
+    MgtKey = "20161121-03"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID

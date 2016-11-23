@@ -10,7 +10,7 @@ import testValue
 
 from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
+statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 '''
@@ -28,7 +28,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서관리번호
-    MgtKey = "20161121-01"
+    MgtKey = "20161123-01"
 
     fileList = statementService.getFiles(CorpNum, ItemCode, MgtKey)
 

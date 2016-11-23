@@ -8,13 +8,13 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import Statement,StatementDetail,StatementService,PopbillException
+from popbill import Statement, StatementDetail, StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 try:
-    print("=" * 15 + " 전자명세서 1건 즉시발행 " + "=" * 15)
+    print("=" * 15 + " 전자명세서 즉시발행 " + "=" * 15)
 
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
@@ -23,7 +23,7 @@ try:
     UserID = testValue.testUserID
 
     # 메모
-    Memo = "명세서 즉시발행 메모"
+    Memo = "즉시발행 메모"
 
     # 전자명세서 정보
     statement = Statement(
@@ -43,7 +43,7 @@ try:
         itemCode = 121,
 
         # 전자명세서 관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 공급자별 고유번호 생성
-        mgtKey = "20161121-03",
+        mgtKey = "20161123-04",
 
         # 공급자 사업자번호, '-' 제외 10자리
         senderCorpNum = CorpNum,

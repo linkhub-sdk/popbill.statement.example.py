@@ -10,7 +10,7 @@ import testValue
 
 from popbill import JoinForm, StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
+statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 '''

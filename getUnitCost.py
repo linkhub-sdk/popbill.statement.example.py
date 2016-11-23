@@ -10,7 +10,7 @@ import testValue
 
 from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
+statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 '''
@@ -21,14 +21,14 @@ try:
     print("=" * 15 + " 전자명세서 발행단가 확인 " + "=" * 15)
 
     # 팝빌회원 사업자번호
-    CorpNum = testValue.testCorpnum
+    CorpNum = testValue.testCorpNum
 
     # 명세서 코드 [121-거래명세서], [122-청구서], [123-견적서], [124-발주서], [125-입금표], [126-영수증]
     ItemCode = 121
 
     unitCost = statementService.getUnitCost(CorpNum, ItemCode)
 
-    print("단가: %f" % unitCost)
+    print("발행단가: %f" % unitCost)
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

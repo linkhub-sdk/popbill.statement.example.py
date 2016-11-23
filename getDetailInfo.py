@@ -10,7 +10,7 @@ import testValue
 
 from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
+statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 '''
@@ -29,7 +29,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서관리번호
-    MgtKey = "20161121-01"
+    MgtKey = "20161123-01"
 
     statement = statementService.getDetailInfo(CorpNum, ItemCode, MgtKey)
 
@@ -75,7 +75,7 @@ try:
     print ("receiverEmail : %s" % (statement.receiverEmail)+"\n")
 
     for n in range(0, len(statement.detailList)):
-        print ("detailList[%s] "% n)
+        print ("detailList[%s] "% (n+1))
         print ("       serialNum : %s "% statement.detailList[n].serialNum)
         print ("       purchaseDT : %s "% statement.detailList[n].purchaseDT)
         print ("       itemName : %s "% statement.detailList[n].itemName)

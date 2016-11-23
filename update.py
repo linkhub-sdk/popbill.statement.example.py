@@ -168,8 +168,6 @@ try:
         }
     )
 
-
-
     result = statementService.update(CorpNum, ItemCode, mgtKey, statement)
 
     print("처리결과 : [%d] %s" % (result.code,result.message))

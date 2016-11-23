@@ -10,7 +10,7 @@ import testValue
 
 from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
+statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 '''
@@ -30,7 +30,7 @@ try:
     ItemCode = "121"
 
     # 전자명세서 문서관리번호
-    MgtKey = "20161121-01"
+    MgtKey = "20161123-01"
 
     # 첨부할 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서 125-입금표, 126-영수증
     SubItemCode = "121"

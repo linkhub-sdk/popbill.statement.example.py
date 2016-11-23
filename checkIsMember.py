@@ -10,7 +10,7 @@ import testValue
 
 from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
+statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 '''
@@ -24,6 +24,7 @@ try:
     CorpNum = "1234567890"
 
     result = statementService.checkIsMember(CorpNum)
+    
     print("가입여부 확인 : [%d] %s" % (result.code,result.message))
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

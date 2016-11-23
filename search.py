@@ -8,9 +8,9 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import StatementService,PopbillException
+from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 '''
@@ -22,13 +22,19 @@ statementService.IsTest = testValue.IsTest
 try:
     print("=" * 15 + " 문서 조회 " + "=" * 15)
 
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
     # 일자유형, R-등록일시, W-작성일자, I-발행일시 중 택 1
     DType = "W"
 
-    # 시작일자, 표시형식(yyyyMMdd)
+    # 시작일자, 날짜형식(yyyyMMdd)
     SDate = "20161001"
 
-    # 종료일자, 표시형식(yyyyMMdd)
+    # 종료일자, 날짜형식(yyyyMMdd)
     EDate = "20161131"
 
     # 명세서 상태코드, 2,3번째 자리에 와일드카드(*) 사용 가능
@@ -49,8 +55,8 @@ try:
     # 거래처 정보, 거래처 상호 또는 사업자등록번호 기재, 공백처리시 전체조회
     QString = ""
 
-    response = statementService.search(testValue.testCorpNum, DType, SDate, EDate,
-            State, ItemCode, Page, PerPage, Order, testValue.testUserID, QString)
+    response = statementService.search(CorpNum, DType, SDate, EDate, State, ItemCode,
+        Page, PerPage, Order, UserID, QString)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)

@@ -10,7 +10,7 @@ import testValue
 
 from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
+statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 '''
@@ -27,12 +27,12 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서관리번호
-    MgtKey = "20161121-01"
+    MgtKey = "20161123-01"
 
     # 메모
     Memo = "발행취소 메모"
 
-    result = statementService.cancel(CorpNum, MgtKey, Memo)
+    result = statementService.cancel(CorpNum, ItemCode, MgtKey, Memo)
 
     print("처리결과 : [%d] %s" % (result.code,result.message))
 

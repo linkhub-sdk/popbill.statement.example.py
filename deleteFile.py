@@ -10,7 +10,7 @@ import testValue
 
 from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
+statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 '''
@@ -29,10 +29,10 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서관리번호
-    MgtKey = "20150326-01"
+    MgtKey = "20161123-01"
 
     # 삭제할 FileID, 첨부파일목록(getFiles API) 응답 전문의 attachedFile 값
-    FileID = "E9DCCC9B-6DA8-4F48-8698-A1DFBCAD85D2.PBF"
+    FileID = "4DB71521-DC61-43EB-A061-DB0987ABACAB.PBF"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID

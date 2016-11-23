@@ -10,7 +10,7 @@ import testValue
 
 from popbill import StatementService, PopbillException
 
-statementService =  StatementService(testValue.LinkID,testValue.SecretKey)
+statementService =  StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 '''
@@ -24,7 +24,7 @@ try:
     print("=" * 15 + " 전자명세서 팩스 전송 " + "=" * 15)
 
     # 팝빌회원 사업자번호
-    CorpNum = testValue.testUserID
+    CorpNum = testValue.testCorpNum
 
     # 명세서 코드, [121-거래명세서], [122-청구서], [123-견적서] [124-발주서], [125-입금표], [126-영수증]
     ItemCode = 121
