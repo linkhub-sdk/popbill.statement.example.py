@@ -30,10 +30,7 @@ try:
     # 전자명세서 문서관리번호
     MgtKey = "20161121-03"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    url = statementService.getPrintURL(CorpNum, ItemCode, MgtKey, UserID)
+    url = statementService.getPrintURL(CorpNum, ItemCode, MgtKey)
     print("URL: %s" % url)
 
 except PopbillException as PE:

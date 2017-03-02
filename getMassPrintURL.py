@@ -33,10 +33,7 @@ try:
     MgtKeyList.append("20161121-02")
     MgtKeyList.append("20161121-03")
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    url = statementService.getMassPrintURL(CorpNum, ItemCode, MgtKeyList, UserID)
+    url = statementService.getMassPrintURL(CorpNum, ItemCode, MgtKeyList)
     print("URL: %s" % url)
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))
