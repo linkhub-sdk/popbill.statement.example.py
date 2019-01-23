@@ -30,8 +30,8 @@ try:
     # 명세서 코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서, 125-입금표, 126-영수증
     ItemCode = 121
 
-    # 전자명세서 문서관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 공급자별 고유번호 생성
-    MgtKey = "20161121-01"
+    # 전자명세서 문서관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
+    MgtKey = "20190123-01"
 
     bIsInUse = statementService.checkMgtKeyInUse(CorpNum, ItemCode, MgtKey)
     print("사용여부 : 사용중" if bIsInUse else "사용여부 : 미사용중")

@@ -32,7 +32,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서관리번호
-    MgtKey = "20161123-01"
+    MgtKey = "20190123-01"
 
     # 파일의 파일 경로
     FilePath = "test.jpeg"

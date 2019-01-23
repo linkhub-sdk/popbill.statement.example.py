@@ -136,39 +136,43 @@ try:
 
         # 통장사본 이미지 첨부 여부
         bankBookYN=False,
-
-        # 상세항목(품목) 정보
-        detailList=[
-            StatementDetail(
-                serialNum=1,  # 일련번호, 1부터 순차기재
-                itemName="품목1",  # 품목명
-                purchaseDT="20161120",  # 거래일자
-                spec="BOX",  # 규격
-                unitCost="10000",  # 단가
-                qty=1,  # 수량
-                supplyCost="10000",  # 공급가액
-                tax="1000"  # 세액
-            ),
-            StatementDetail(
-                serialNum=2,  # 일련번호, 1부터 순차기재
-                itemName="품목1",  # 품목명
-                purchaseDT="20161120",  # 거래일자
-                spec="BOX",  # 규격
-                unitCost="10000",  # 단가
-                qty=1,  # 수량
-                supplyCost="10000",  # 공급가액
-                tax="1000"  # 세액
-            )
-        ],
-
-        # 추가속성정보, 명세서 종류별 추가적인 속성을{key:value}형식의 Dictionary로 정의
-        # 자세한 정보는 "전자명세서 API 연동매뉴얼 > [5.2. 기본양식 추가속성 테이블] 참조
-        propertyBag={
-            'Balance': '20000',  # 전잔액
-            'Deposit': '5000',  # 입금액
-            'CBalance': '25000'  # 현잔액
-        }
     )
+
+    # 상세항목(품목) 정보 (배열 길이 제한 없음)
+    statement.detailList = []
+
+    statement.detailList.append(
+        StatementDetail(
+            serialNum=1,  # 일련번호, 1부터 순차기재
+            itemName="품목1",  # 품목
+            purchaseDT="20190116",  # 거래일자
+            spec="BOX",  # 규격
+            unitCost="10000",  # 단가
+            qty=1,  # 수량
+            supplyCost="10000",  # 공급가액
+            tax="1000"  # 세액
+        )
+    )
+    statement.detailList.append(
+        StatementDetail(
+            serialNum=2,  # 일련번호, 1부터 순차기재
+            itemName="품목1",  # 품목
+            purchaseDT="20190116",  # 거래일자
+            spec="BOX",  # 규격
+            unitCost="10000",  # 단가
+            qty=1,  # 수량
+            supplyCost="10000",  # 공급가액
+            tax="1000"  # 세액
+        )
+    )
+
+    # 추가속성정보, 명세서 종류별 추가적인 속성을{key:value}형식의 Dictionary로 정의
+    # 자세한 정보는 "전자명세서 API 연동매뉴얼 > [5.2. 기본양식 추가속성 테이블] 참조
+    statement.propertyBag = {
+        'Balance': "20000",  # 전잔액
+        'Deposit': "5000",  # 입금액
+        'CBalance': "25000"  # 현잔액
+    }
 
     result = statementService.registIssue(CorpNum, statement, Memo, UserID)
 

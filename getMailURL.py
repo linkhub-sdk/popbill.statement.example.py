@@ -14,7 +14,7 @@ statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
 '''
-공급받는자 메일링크 URL을 반환합니다.
+수신자 메일링크 URL을 반환합니다.
 - 메일링크 URL은 유효시간이 존재하지 않습니다.
 '''
 
