@@ -31,7 +31,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서관리번호
-    MgtKey = "20190117-001"
+    MgtKey = "20190124-01"
 
     fileList = statementService.getFiles(CorpNum, ItemCode, MgtKey)
 

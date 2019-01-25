@@ -30,7 +30,7 @@ try:
     # 전자명세서 정보
     statement = Statement(
         # 작성일자 yyyyMMdd
-        writeDate="20190117",
+        writeDate="20190124",
 
         # '영수'/'청구' 중 기재
         purposeType="영수",
@@ -45,7 +45,7 @@ try:
         itemCode=121,
 
         # 전자명세서 관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
-        mgtKey="20190117-300",
+        mgtKey="20190124-123",
 
         # 발신자 사업자번호, '-' 제외 10자리
         senderCorpNum=CorpNum,
@@ -144,24 +144,36 @@ try:
         StatementDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20190116",  # 거래일자
+            purchaseDT="20190124",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량
             supplyCost="10000",  # 공급가액
-            tax="1000"  # 세액
+            tax="1000",  # 세액
+            remark="비고",  # 비고
+            spare1="여분1",  # 여분1
+            spare2="여분2",  # 여분2
+            spare3="여분3",  # 여분3
+            spare4="여분4",  # 여분4
+            spare5="여분5",  # 여분5
         )
     )
     statement.detailList.append(
         StatementDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20190116",  # 거래일자
+            purchaseDT="20190124",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량
             supplyCost="10000",  # 공급가액
-            tax="1000"  # 세액
+            tax="1000",  # 세액
+            remark="비고",  # 비고
+            spare1="여분1",  # 여분1
+            spare2="여분2",  # 여분2
+            spare3="여분3",  # 여분3
+            spare4="여분4",  # 여분4
+            spare5="여분5",  # 여분5
         )
     )
 

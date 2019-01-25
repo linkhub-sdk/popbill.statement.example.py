@@ -154,7 +154,7 @@ try:
         StatementDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20190116",  # 거래일자
+            purchaseDT="20190117",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량
@@ -166,7 +166,7 @@ try:
         StatementDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20190116",  # 거래일자
+            purchaseDT="20190117",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량

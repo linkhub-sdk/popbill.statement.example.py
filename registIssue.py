@@ -16,6 +16,10 @@ from popbill import Statement, StatementDetail, StatementService, PopbillExcepti
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 
+'''
+1건의 전자명세서를 즉시발행합니다.
+'''
+
 try:
     print("=" * 15 + " 전자명세서 즉시발행 " + "=" * 15)
 
@@ -150,7 +154,13 @@ try:
             unitCost="10000",  # 단가
             qty=1,  # 수량
             supplyCost="10000",  # 공급가액
-            tax="1000"  # 세액
+            tax="1000",  # 세액
+            remark="비고",  # 비고
+            spare1="여분1",  # 여분1
+            spare2="여분2",  # 여분2
+            spare3="여분3",  # 여분3
+            spare4="여분4",  # 여분4
+            spare5="여분5",  # 여분5
         )
     )
     statement.detailList.append(
@@ -162,7 +172,13 @@ try:
             unitCost="10000",  # 단가
             qty=1,  # 수량
             supplyCost="10000",  # 공급가액
-            tax="1000"  # 세액
+            tax="1000",  # 세액
+            remark="비고",  # 비고
+            spare1="여분1",  # 여분1
+            spare2="여분2",  # 여분2
+            spare3="여분3",  # 여분3
+            spare4="여분4",  # 여분4
+            spare5="여분5",  # 여분5
         )
     )
 

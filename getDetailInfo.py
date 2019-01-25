@@ -18,8 +18,7 @@ statementService.IsTest = testValue.IsTest
 
 '''
 전자명세서 1건의 상세정보를 조회합니다.
-- 응답항목에 대한 자세한 사항은 "[전자명세서 API 연동매뉴얼] > 4.1. 전자명세서 구성" 을
-  참조하시기 바랍니다.
+- 응답항목에 대한 자세한 사항은 "[전자명세서 API 연동매뉴얼] > 4.1. 전자명세서 구성" 을 참조하시기 바랍니다.
 '''
 
 try:
@@ -32,7 +31,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서관리번호
-    MgtKey = "20190117-001"
+    MgtKey = "20190124-123"
 
     statement = statementService.getDetailInfo(CorpNum, ItemCode, MgtKey)
 
@@ -88,12 +87,13 @@ try:
         print ("       qty(수량) : %s " % statement.detailList[n].qty)
         print ("       unitCost(단가) : %s " % statement.detailList[n].unitCost)
         print ("       supplyCost(공급가액) : %s " % statement.detailList[n].supplyCost)
-        print ("       tax(세액) : %s " % statement.detailList[n].tax + "\n")
-        # print ("       spare1(비고1) : %s "% statement.detailList[n].spare1)
-        # print ("       spare2(비고2) : %s "% statement.detailList[n].spare2)
-        # print ("       spare3(비고3) : %s "% statement.detailList[n].spare3)
-        # print ("       spare4(비고4) : %s "% statement.detailList[n].spare4)
-        # print ("       spare5(비고5) : %s "% statement.detailList[n].spare5)
+        print ("       tax(세액) : %s " % statement.detailList[n].tax)
+        print ("       remark(비고) : %s " % statement.detailList[n].remark)
+        print ("       spare1(여분1) : %s "% statement.detailList[n].spare1)
+        print ("       spare2(여분2) : %s "% statement.detailList[n].spare2)
+        print ("       spare3(여분3) : %s "% statement.detailList[n].spare3)
+        print ("       spare4(여분4) : %s "% statement.detailList[n].spare4)
+        print ("       spare5(여분5) : %s "% statement.detailList[n].spare5)
 
     if statement.propertyBag is not None:
         print ("propertyBag : ")
