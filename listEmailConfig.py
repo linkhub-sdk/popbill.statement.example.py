@@ -43,6 +43,5 @@ try:
         if info.emailType == "SMT_CANCEL_ISSUE":
             print("%s(수신자에게 전자명세서가 발행취소 되었음을 알려주는 메일 전송 여부) : %s" % (info.emailType, info.sendYN))
 
-
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

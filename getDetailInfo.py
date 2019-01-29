@@ -93,7 +93,7 @@ try:
         print ("       spare2(여분2) : %s "% statement.detailList[n].spare2)
         print ("       spare3(여분3) : %s "% statement.detailList[n].spare3)
         print ("       spare4(여분4) : %s "% statement.detailList[n].spare4)
-        print ("       spare5(여분5) : %s "% statement.detailList[n].spare5)
+        print ("       spare5(여분5) : %s "% statement.detailList[n].spare5 +'\n')
 
     if statement.propertyBag is not None:
         print ("propertyBag : ")

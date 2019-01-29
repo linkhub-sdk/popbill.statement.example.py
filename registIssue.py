@@ -29,6 +29,9 @@ try:
     # 팝빌회원 아이디
     UserID = testValue.testUserID
 
+    # 전자명세서 문서관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
+    mgtKey = "20190124-1234"
+
     # 메모
     Memo = "즉시발행 메모"
 
@@ -50,7 +53,7 @@ try:
         itemCode=121,
 
         # 전자명세서 관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
-        mgtKey="20190117-001",
+        mgtKey=mgtKey,
 
         # 발신자 사업자번호, '-' 제외 10자리
         senderCorpNum=CorpNum,

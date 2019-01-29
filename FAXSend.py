@@ -37,10 +37,13 @@ try:
     # 팩스수신번호
     ReceiveNum = "070-111-222"
 
+    # 전자명세서 문서관리번호
+    mgtKey = "20190129-001"
+
     # 전자명세서 정보
     statement = Statement(
         # 작성일자 yyyyMMdd
-        writeDate="20190117",
+        writeDate="20190129",
 
         # '영수'/'청구' 중 기재
         purposeType="영수",
@@ -55,7 +58,7 @@ try:
         itemCode=121,
 
         # 전자명세서 관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
-        mgtKey="20190117-200",
+        mgtKey=mgtKey,
 
         # 발신자 사업자번호, '-' 제외 10자리
         senderCorpNum=CorpNum,
@@ -154,7 +157,7 @@ try:
         StatementDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20190117",  # 거래일자
+            purchaseDT="20190129",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량
@@ -166,7 +169,7 @@ try:
         StatementDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20190117",  # 거래일자
+            purchaseDT="20190129",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량

@@ -27,6 +27,9 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
+    # 전자명세서 문서관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
+    mgtKey = "20190124-12345"
+
     # 전자명세서 정보
     statement = Statement(
         # 작성일자 yyyyMMdd
@@ -45,7 +48,7 @@ try:
         itemCode=121,
 
         # 전자명세서 관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
-        mgtKey="20190124-123",
+        mgtKey=mgtKey,
 
         # 발신자 사업자번호, '-' 제외 10자리
         senderCorpNum=CorpNum,
