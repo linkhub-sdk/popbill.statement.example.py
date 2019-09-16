@@ -15,6 +15,7 @@ from popbill import Statement, StatementDetail, StatementService, PopbillExcepti
 
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
+statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 try:
     print("=" * 15 + " 전자명세서 수정 " + "=" * 15)

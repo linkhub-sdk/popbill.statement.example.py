@@ -15,6 +15,7 @@ from popbill import StatementService, PopbillException
 
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
+statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 전자명세서 1건의 상세정보를 조회합니다.

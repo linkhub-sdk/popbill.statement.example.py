@@ -15,6 +15,7 @@ from popbill import StatementService, PopbillException
 
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
+statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 전자명세서에 첨부파일을 등록합니다.

@@ -15,6 +15,7 @@ from popbill import StatementService, PopbillException
 
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
+statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 발행 안내메일을 재전송합니다.

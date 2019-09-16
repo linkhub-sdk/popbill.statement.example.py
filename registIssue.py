@@ -15,6 +15,7 @@ from popbill import Statement, StatementDetail, StatementService, PopbillExcepti
 
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
+statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 1건의 전자명세서를 즉시발행합니다.
@@ -30,7 +31,7 @@ try:
     UserID = testValue.testUserID
 
     # 전자명세서 문서관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
-    mgtKey = "20190124-1234"
+    mgtKey = "20190916-0004"
 
     # 메모
     Memo = "즉시발행 메모"
@@ -38,7 +39,7 @@ try:
     # 전자명세서 정보
     statement = Statement(
         # 작성일자 yyyyMMdd
-        writeDate="20190117",
+        writeDate="20190916",
 
         # '영수'/'청구' 중 기재
         purposeType="영수",
@@ -152,7 +153,7 @@ try:
         StatementDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20190116",  # 거래일자
+            purchaseDT="20190916",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량
@@ -170,7 +171,7 @@ try:
         StatementDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20190116",  # 거래일자
+            purchaseDT="20190916",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량

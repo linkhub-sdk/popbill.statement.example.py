@@ -15,6 +15,7 @@ from popbill import StatementService, PopbillException
 
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
+statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 알림문자를 전송합니다. (단문/SMS- 한글 최대 45자)

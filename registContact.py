@@ -15,6 +15,7 @@ from popbill import ContactInfo, StatementService, PopbillException
 
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
+statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 연동회원의 담당자를 신규로 등록합니다.

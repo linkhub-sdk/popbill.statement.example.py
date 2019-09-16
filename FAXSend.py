@@ -15,6 +15,7 @@ from popbill import Statement, StatementDetail, StatementService, PopbillExcepti
 
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
+statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 팝빌에 등록하지 않고 전자명세서를 팩스전송합니다.
