@@ -31,15 +31,18 @@ try:
     UserID = testValue.testUserID
 
     # 전자명세서 문서관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
-    mgtKey = "20190916-0004"
+    mgtKey = "20191025-0005"
 
     # 메모
     Memo = "즉시발행 메모"
 
+    # 안내메일 제목, 공백처리시 기본양식으로 전송
+    EmailSubject = ""
+
     # 전자명세서 정보
     statement = Statement(
         # 작성일자 yyyyMMdd
-        writeDate="20190916",
+        writeDate="20191025",
 
         # '영수'/'청구' 중 기재
         purposeType="영수",
@@ -114,7 +117,7 @@ try:
         receiverContactName="수신자 담당자명",
 
         # 수신자  메일주소
-        receiverEmail="test@test.com",
+        receiverEmail="code@linkhub.co.kr",
 
         # 수신자 연락처
         receiverTEL="070111222",
@@ -194,7 +197,7 @@ try:
         'CBalance': "25000"  # 현잔액
     }
 
-    result = statementService.registIssue(CorpNum, statement, Memo, UserID)
+    result = statementService.registIssue(CorpNum, statement, Memo, UserID, EmailSubject)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 
