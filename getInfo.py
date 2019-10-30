@@ -31,7 +31,7 @@ try:
     # 명세서 코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서, 125-입금표, 126-영수증
     ItemCode = 121
 
-    # 전자명세서 문서관리번호
+    # 전자명세서 문서번호
     MgtKey = "20190116-001"
 
     statementInfo = statementService.getInfo(CorpNum, ItemCode, MgtKey)
@@ -39,7 +39,7 @@ try:
     print ("itemCode (문서종류코드): %s" % statementInfo.itemCode)
     print ("itemKey (팝빌 관리번호): %s" % statementInfo.itemKey)
     print ("invoiceNum (문서고유번호): %s" % statementInfo.invoiceNum)
-    print ("mgtKey (문서관리번호): %s" % statementInfo.mgtKey)
+    print ("mgtKey (문서번호): %s" % statementInfo.mgtKey)
     print ("taxType (세금형태): %s" % statementInfo.taxType)
     print ("writeDate (작성일자): %s" % statementInfo.writeDate)
     print ("regDT (임시저장일시): %s" % statementInfo.regDT)

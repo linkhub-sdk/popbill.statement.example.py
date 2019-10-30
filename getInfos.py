@@ -31,7 +31,7 @@ try:
     # 명세서 코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서, 125-입금표, 126-영수증
     ItemCode = 121
 
-    # 문서관리번호 배열, 최대 1000건
+    # 문서번호 배열, 최대 1000건
     MgtKeyList = []
     MgtKeyList.append("20190117-001")
     MgtKeyList.append("20190117-002")
@@ -43,7 +43,7 @@ try:
         print ("itemCode (문서종류코드): %s" % info.itemCode)
         print ("itemKey (팝빌 관리번호): %s" % info.itemKey)
         print ("invoiceNum (문서고유번호): %s" % info.invoiceNum)
-        print ("mgtKey (문서관리번호): %s" % info.mgtKey)
+        print ("mgtKey (문서번호): %s" % info.mgtKey)
         print ("taxType (세금형태): %s" % info.taxType)
         print ("writeDate (작성일자): %s" % info.writeDate)
         print ("regDT (임시저장일시): %s" % info.regDT)

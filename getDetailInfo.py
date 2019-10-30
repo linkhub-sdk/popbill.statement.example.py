@@ -31,13 +31,13 @@ try:
     # 명세서 코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서, 125-입금표, 126-영수증
     ItemCode = 121
 
-    # 전자명세서 문서관리번호
+    # 전자명세서 문서번호
     MgtKey = "20190124-123"
 
     statement = statementService.getDetailInfo(CorpNum, ItemCode, MgtKey)
     print ("전자명세서 정보>")
     print ("itemCode(문서종류코드) : %s" % statement.itemCode)
-    print ("mgtKey(관리번호) : %s" % statement.mgtKey)
+    print ("mgtKey(문서번호) : %s" % statement.mgtKey)
     print ("invoiceNum(문서고유번호) : %s" % statement.invoiceNum)
     print ("formCode(맞춤양식 코드) : %s" % statement.formCode)
     print ("writeDate(작성일자) : %s" % statement.writeDate)

@@ -28,7 +28,7 @@ try:
     # 명세서 코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서, 125-입금표, 126-영수증
     ItemCode = 121
 
-    # 전자명세서 문서관리번호
+    # 전자명세서 문서번호
     MgtKey = "20190116-001"
 
     url = statementService.getMailURL(CorpNum, ItemCode, MgtKey)
