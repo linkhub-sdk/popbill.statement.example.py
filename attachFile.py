@@ -21,6 +21,7 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 전자명세서에 첨부파일을 등록합니다.
 - 첨부파일 등록은 전자명세서가 [임시저장] 상태인 경우에만 가능합니다.
 - 첨부파일은 최대 5개까지 등록할 수 있습니다.
+- https://docs.popbill.com/statement/python/api#AttachFile
 '''
 
 try:

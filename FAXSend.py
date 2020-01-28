@@ -21,6 +21,7 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 팝빌에 등록하지 않고 전자명세서를 팩스전송합니다.
 - 팩스 전송 요청시 포인트가 차감됩니다. (전송실패시 환불처리)
 - 전송내역 확인은 "팝빌" > [문자 팩스] > [팩스] > [전송내역] 메뉴에서 전송결과를 확인할 수 있습니다.
+- https://docs.popbill.com/statement/python/api#FAXSend
 '''
 
 try:

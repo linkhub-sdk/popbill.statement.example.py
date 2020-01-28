@@ -17,6 +17,7 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 '''
 1건의 [임시저장] 상태의 전자명세서를 발행처리합니다.
 - 발행시 포인트가 차감됩니다.
+- https://docs.popbill.com/statement/python/api#StmIssue
 '''
 
 try:

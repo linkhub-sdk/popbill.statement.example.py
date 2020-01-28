@@ -19,6 +19,7 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 발행 안내메일을 재전송합니다.
+- https://docs.popbill.com/statement/python/api#SendEmail
 '''
 
 try:

@@ -19,6 +19,7 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 전자명세서에 첨부된 다른 전자명세서를 첨부해제합니다.
+- https://docs.popbill.com/statement/python/api#DetachStatement
 '''
 
 try:

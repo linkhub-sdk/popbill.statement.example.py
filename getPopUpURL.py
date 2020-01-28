@@ -20,6 +20,7 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 '''
 1건의 전자명세서 보기 팝업 URL을 반환합니다.
 - 보안정책으로 인해 반환된 URL의 유효시간은 30초입니다.
+- https://docs.popbill.com/statement/python/api#GetPopUpURL
 '''
 
 try:

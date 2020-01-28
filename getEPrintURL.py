@@ -20,6 +20,7 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 '''
 전자명세서 인쇄(수신자) URL을 반환합니다.
 - 반환된 URL은 보안정책에 따라 30초의 유효시간을 갖습니다.
+- https://docs.popbill.com/statement/python/api#GetEPrintURL
 '''
 
 try:

@@ -20,6 +20,7 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 '''
 전자명세서 1건을 임시저장합니다.
 - 임시저장 상태의 명세서는 발행(Issue API)을 호출해야 수신자에게 메일이 전송됩니다.
+- https://docs.popbill.com/statement/python/api#Register
 '''
 
 try:

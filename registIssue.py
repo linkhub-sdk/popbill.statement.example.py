@@ -19,6 +19,7 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 1건의 전자명세서를 즉시발행합니다.
+- https://docs.popbill.com/statement/python/api#RegistIssue
 '''
 
 try:
