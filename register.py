@@ -16,6 +16,7 @@ from popbill import Statement, StatementDetail, StatementService, PopbillExcepti
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
+statementService.UseStaticIP = testValue.UseStaticIP
 
 '''
 전자명세서 1건을 임시저장합니다.

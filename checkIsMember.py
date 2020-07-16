@@ -16,6 +16,7 @@ from popbill import StatementService, PopbillException
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
+statementService.UseStaticIP = testValue.UseStaticIP
 
 '''
 해당 사업자의 파트너 연동회원 가입여부를 확인합니다.

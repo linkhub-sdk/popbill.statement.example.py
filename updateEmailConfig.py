@@ -16,6 +16,7 @@ from popbill import StatementService, PopbillException
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
+statementService.UseStaticIP = testValue.UseStaticIP
 
 '''
 전자명세서 관련 메일전송 항목에 대한 전송여부를 수정합니다.

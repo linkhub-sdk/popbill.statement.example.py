@@ -16,6 +16,7 @@ from popbill import StatementService, PopbillException
 statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
+statementService.UseStaticIP = testValue.UseStaticIP
 
 '''
 1건의 전자명세서 인쇄팝업 URL을 반환합니다.
