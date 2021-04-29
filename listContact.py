@@ -17,6 +17,7 @@ statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
+statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 연동회원의 담당자 목록을 확인합니다.
@@ -42,9 +43,10 @@ try:
         print("fax (담당자 팩스번호) : %s" % info.fax)
         print("tel (담당자 연락처) : %s" % info.tel)
         print("regDT (등록일시) : %s" % info.regDT)
-        print("searchAllAllowYN (회사 조회권한) : %s" % info.searchAllAllowYN)
+        print("searchRole (담당자 조회권한) : %s" % info.searchRole)
         print("mgrYN (관리자 여부): %s" % info.mgrYN)
-        print("state (상태): %s" % info.state) + '\n'
+        print("state (상태): %s" % info.state)
+        print("*" * 50)
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

@@ -17,6 +17,7 @@ statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
+statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 연동회원의 담당자를 신규로 등록합니다.
@@ -38,8 +39,9 @@ try:
         # 아이디 (6자 이상 50자 미만)
         id="popbill_test_id",
 
-        # 비밀번호 (6자 이상 20자 미만)
-        pwd="popbill_test_pwd",
+        # 비밀번호 (8자 이상 20자 미만)
+        # 영문, 숫자, 특수문자 조합
+        Password="password123!@#",
 
         # 담당자명 (최대 100자)
         personName="담당자명",
@@ -56,8 +58,8 @@ try:
         # 담당자 이메일 (최대 100자)
         email="test@test.com",
 
-        # 회사조회 권한여부, True(회사조회) False(개인조회)
-        searchAllAllowYN=True,
+        #담당자 조회권한, 1(개인) 2(읽기) 3(회사)
+        searchRole=1,
 
         # 관리자 권한여부, True(관리자), False(사용자)
         mgrYN=True
