@@ -17,6 +17,7 @@ statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
+statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 전자명세서 문서번호 중복여부를 확인합니다.
@@ -34,7 +35,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
-    MgtKey = "20190123-01"
+    MgtKey = "20210429-01"
 
     bIsInUse = statementService.checkMgtKeyInUse(CorpNum, ItemCode, MgtKey)
     print("사용여부 : 사용중" if bIsInUse else "사용여부 : 미사용중")

@@ -17,6 +17,7 @@ statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
+statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 1건의 전자명세서를 [발행취소] 처리합니다.
@@ -33,7 +34,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20190117-001"
+    MgtKey = "20210429-003"
 
     # 메모
     Memo = "발행취소 메모"

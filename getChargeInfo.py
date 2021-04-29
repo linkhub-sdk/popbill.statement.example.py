@@ -17,6 +17,7 @@ statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
+statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 전자명세서 API 서비스 과금정보를 확인합니다.

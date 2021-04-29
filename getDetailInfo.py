@@ -17,6 +17,7 @@ statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
+statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 전자명세서 1건의 상세정보를 조회합니다.
@@ -33,7 +34,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20190124-123"
+    MgtKey = "20210429-123"
 
     statement = statementService.getDetailInfo(CorpNum, ItemCode, MgtKey)
     print ("전자명세서 정보>")

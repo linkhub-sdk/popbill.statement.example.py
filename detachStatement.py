@@ -17,6 +17,7 @@ statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
+statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 전자명세서에 첨부된 다른 전자명세서를 첨부해제합니다.
@@ -36,13 +37,13 @@ try:
     ItemCode = "121"
 
     # 전자명세서 문서번호
-    MgtKey = "20190124-01"
+    MgtKey = "20210429-01"
 
     # 첨부해제할 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서, 125-입금표, 126-영수증
     SubItemCode = "121"
 
     # 첨부해제할 전자명세서 문서번호
-    SubMgtKey = "20190124-02"
+    SubMgtKey = "20210429-02"
 
     result = statementService.detachStatement(CorpNum, ItemCode, MgtKey, SubItemCode, SubMgtKey, UserID)
 

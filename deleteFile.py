@@ -17,6 +17,7 @@ statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
+statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 전자명세서에 첨부된 파일을 삭제합니다.
@@ -35,7 +36,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20190117-001"
+    MgtKey = "20210429-001"
 
     # 삭제할 FileID, 첨부파일목록(getFiles API) 응답 전문의 attachedFile 값
     FileID = "4DB71521-DC61-43EB-A061-DB0987ABACAB.PBF"

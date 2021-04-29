@@ -17,6 +17,7 @@ statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
+statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 다수건의 전자명세서 상태/요약 정보를 확인합니다.
@@ -34,9 +35,9 @@ try:
 
     # 문서번호 배열, 최대 1000건
     MgtKeyList = []
-    MgtKeyList.append("20190117-001")
-    MgtKeyList.append("20190117-002")
-    MgtKeyList.append("20190117-003")
+    MgtKeyList.append("20210429-001")
+    MgtKeyList.append("20210429-002")
+    MgtKeyList.append("20210429-003")
 
     InfoList = statementService.getInfos(CorpNum, ItemCode, MgtKeyList)
 

@@ -17,6 +17,7 @@ statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
+statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 1건의 전자명세서 보기 팝업 URL을 반환합니다. [메뉴/버튼 제외]
@@ -34,7 +35,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20190117-001"
+    MgtKey = "20210429-001"
 
     url = statementService.getViewURL(CorpNum, ItemCode, MgtKey)
     print("URL: %s" % url)

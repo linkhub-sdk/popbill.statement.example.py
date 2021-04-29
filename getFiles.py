@@ -17,6 +17,7 @@ statementService = StatementService(testValue.LinkID, testValue.SecretKey)
 statementService.IsTest = testValue.IsTest
 statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
+statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 전자명세서에 첨부된 파일의 목록을 확인합니다.
@@ -34,7 +35,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20190124-01"
+    MgtKey = "20210429-01"
 
     fileList = statementService.getFiles(CorpNum, ItemCode, MgtKey)
 
