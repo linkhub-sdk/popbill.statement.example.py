@@ -36,9 +36,9 @@ try:
 
     # 인쇄할 문서번호 배열, 최대 100건
     MgtKeyList = []
-    MgtKeyList.append("20190117-001")
-    MgtKeyList.append("20190117-002")
-    MgtKeyList.append("20190117-003")
+    MgtKeyList.append("20211201-001")
+    MgtKeyList.append("20211201-002")
+    MgtKeyList.append("20211201-003")
 
     url = statementService.getMassPrintURL(CorpNum, ItemCode, MgtKeyList)
     print("URL: %s" % url)

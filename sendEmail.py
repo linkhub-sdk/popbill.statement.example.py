@@ -34,7 +34,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20190117-001"
+    MgtKey = "20211201-001"
 
     # 수신메일주소
     ReceiverMail = "test@test.com"

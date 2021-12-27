@@ -34,12 +34,12 @@ try:
     ItemCode = 121
 
     # 수정할 전자명세서 문서번호
-    mgtKey = "20190124-123"
+    mgtKey = "20211201-123"
 
     # 전자명세서 정보
     statement = Statement(
         # 작성일자 yyyyMMdd
-        writeDate="20190124",
+        writeDate="20211201",
 
         # '영수'/'청구' 중 기재
         purposeType="영수",
@@ -155,7 +155,7 @@ try:
         StatementDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20190124",  # 거래일자
+            purchaseDT="20211201",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량
@@ -173,7 +173,7 @@ try:
         StatementDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20190124",  # 거래일자
+            purchaseDT="20211201",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량

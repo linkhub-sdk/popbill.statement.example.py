@@ -34,7 +34,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20190116-001"
+    MgtKey = "20211201-001"
 
     LogList = statementService.getLogs(CorpNum, ItemCode, MgtKey)
 

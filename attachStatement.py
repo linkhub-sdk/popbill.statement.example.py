@@ -37,13 +37,13 @@ try:
     ItemCode = "121"
 
     # 전자명세서 문서번호
-    MgtKey = "20210429-01"
+    MgtKey = "20211201-01"
 
     # 첨부할 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서, 125-입금표, 126-영수증
     SubItemCode = "121"
 
     # 첨부할 전자명세서 문서번호
-    SubMgtKey = "20190124-02"
+    SubMgtKey = "20211201-02"
 
     result = statementService.attachStatement(CorpNum, ItemCode, MgtKey, SubItemCode, SubMgtKey, UserID)
 

@@ -32,7 +32,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20190116-001"
+    MgtKey = "20211201-001"
 
     url = statementService.getMailURL(CorpNum, ItemCode, MgtKey)
     print("URL: %s" % url)
