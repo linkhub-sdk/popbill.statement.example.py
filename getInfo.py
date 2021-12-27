@@ -39,8 +39,8 @@ try:
     statementInfo = statementService.getInfo(CorpNum, ItemCode, MgtKey)
 
     print ("itemCode (문서종류코드): %s" % statementInfo.itemCode)
-    print ("itemKey (팝빌 관리번호): %s" % statementInfo.itemKey)
-    print ("invoiceNum (문서고유번호): %s" % statementInfo.invoiceNum)
+    print ("itemKey (팝빌번호): %s" % statementInfo.itemKey)
+    print ("invoiceNum (팝빌승인번호): %s" % statementInfo.invoiceNum)
     print ("mgtKey (문서번호): %s" % statementInfo.mgtKey)
     print ("taxType (세금형태): %s" % statementInfo.taxType)
     print ("writeDate (작성일자): %s" % statementInfo.writeDate)

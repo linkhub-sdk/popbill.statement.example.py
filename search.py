@@ -73,9 +73,9 @@ try:
     for info in response.list:
         print("====== 전자명세서 정보 ======")
         print("itemCode (문서종류코드) : %s" % info.itemCode)
-        print("itemkey (팝빌 관리번호) : %s" % info.itemKey)
-        print("invoiceNum (문서고유번호) : %s" % info.invoiceNum)
-        print("mgtKey (파트너 관리번호) : %s" % info.mgtKey)
+        print("itemkey (팝빌번호) : %s" % info.itemKey)
+        print("invoiceNum (팝빌승인번호) : %s" % info.invoiceNum)
+        print("mgtKey (문서번호) : %s" % info.mgtKey)
         print("taxType (세금형태) : %s" % info.taxType)
         print("writeDate (작성일자) : %s" % info.writeDate)
         print("regDT (임시저장일시) : %s" % info.regDT)

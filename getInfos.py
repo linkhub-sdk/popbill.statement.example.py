@@ -43,8 +43,8 @@ try:
 
     for info in InfoList:
         print ("itemCode (문서종류코드): %s" % info.itemCode)
-        print ("itemKey (팝빌 관리번호): %s" % info.itemKey)
-        print ("invoiceNum (문서고유번호): %s" % info.invoiceNum)
+        print ("itemKey (팝빌번호): %s" % info.itemKey)
+        print ("invoiceNum (팝빌승인번호)): %s" % info.invoiceNum)
         print ("mgtKey (문서번호): %s" % info.mgtKey)
         print ("taxType (세금형태): %s" % info.taxType)
         print ("writeDate (작성일자): %s" % info.writeDate)
