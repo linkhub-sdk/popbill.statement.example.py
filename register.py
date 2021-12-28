@@ -187,7 +187,6 @@ try:
     )
 
     # 추가속성정보, 명세서 종류별 추가적인 속성을{key:value}형식의 Dictionary로 정의
-    # 자세한 정보는 "전자명세서 API 연동매뉴얼 > [5.2. 기본양식 추가속성 테이블] 참조
     statement.propertyBag = {
         'Balance': "20000",  # 전잔액
         'Deposit': "5000",  # 입금액
