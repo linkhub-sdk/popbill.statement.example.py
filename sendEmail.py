@@ -20,7 +20,7 @@ statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-발행 안내메일을 재전송합니다.
+"승인대기", "발행완료" 상태의 전자명세서와 관련된 발행 안내 메일을 재전송 합니다.
 - https://docs.popbill.com/statement/python/api#SendEmail
 '''
 
@@ -34,10 +34,10 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20211201-001"
+    MgtKey = "20220803-001"
 
     # 수신메일주소
-    ReceiverMail = "test@test.com"
+    ReceiverMail = ""
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID

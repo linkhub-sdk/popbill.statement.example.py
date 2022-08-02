@@ -20,7 +20,7 @@ statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-전자명세서에 다른 전자명세서 1건을 첨부합니다.
+하나의 전자명세서에 다른 전자명세서 1건을 첨부합니다.
 - https://docs.popbill.com/statement/python/api#AttachStatement
 '''
 
@@ -37,13 +37,13 @@ try:
     ItemCode = "121"
 
     # 전자명세서 문서번호
-    MgtKey = "20211201-01"
+    MgtKey = "20220803-001"
 
     # 첨부할 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서, 125-입금표, 126-영수증
     SubItemCode = "121"
 
     # 첨부할 전자명세서 문서번호
-    SubMgtKey = "20211201-02"
+    SubMgtKey = "20220803-002"
 
     result = statementService.attachStatement(CorpNum, ItemCode, MgtKey, SubItemCode, SubMgtKey, UserID)
 

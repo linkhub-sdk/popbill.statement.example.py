@@ -20,7 +20,7 @@ statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-전자명세서 상태 변경이력을 확인합니다.
+전자명세서의 상태에 대한 변경이력을 확인합니다.
 - https://docs.popbill.com/statement/python/api#GetLogs
 '''
 
@@ -34,7 +34,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20211201-001"
+    MgtKey = "20220803-001"
 
     LogList = statementService.getLogs(CorpNum, ItemCode, MgtKey)
 

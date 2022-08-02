@@ -20,9 +20,8 @@ statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-전자명세서에 첨부된 파일을 삭제합니다.
-- 파일을 식별하는 파일아이디는 첨부파일 목록(GetFileList API) 의 응답항목
-  중 파일아이디(AttachedFile) 값을 통해 확인할 수 있습니다.
+"임시저장" 상태의 전자명세서에 첨부된 1개의 파일을 삭제합니다.
+- 파일 식별을 위해 첨부시 부여되는 'FileID'는 첨부파일 목록 확인(GetFiles API) 함수를 호출하여 확인합니다.
 - https://docs.popbill.com/statement/python/api#DeleteFile
 '''
 
@@ -36,7 +35,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20210429-001"
+    MgtKey = "20220803-001"
 
     # 삭제할 FileID, 첨부파일목록(getFiles API) 응답 전문의 attachedFile 값
     FileID = "4DB71521-DC61-43EB-A061-DB0987ABACAB.PBF"

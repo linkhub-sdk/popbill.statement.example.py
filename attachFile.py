@@ -20,9 +20,7 @@ statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-전자명세서에 첨부파일을 등록합니다.
-- 첨부파일 등록은 전자명세서가 [임시저장] 상태인 경우에만 가능합니다.
-- 첨부파일은 최대 5개까지 등록할 수 있습니다.
+"임시저장" 상태의 명세서에 1개의 파일을 첨부합니다. (최대 5개)
 - https://docs.popbill.com/statement/python/api#AttachFile
 '''
 
@@ -36,7 +34,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20210429-01"
+    MgtKey = "20220803-001"
 
     # 첨부할 파일의 파일 경로
     FilePath = "test.jpeg"

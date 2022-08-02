@@ -34,7 +34,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20210429-123"
+    MgtKey = "20220803-123"
 
     statement = statementService.getDetailInfo(CorpNum, ItemCode, MgtKey)
     print ("전자명세서 정보>")

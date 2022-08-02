@@ -20,9 +20,11 @@ statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-팝빌에 등록하지 않고 전자명세서를 팩스전송합니다.
-- 팩스 전송 요청시 포인트가 차감됩니다. (전송실패시 환불처리)
-- 전송내역 확인은 "팝빌" > [문자 팩스] > [팩스] > [전송내역] 메뉴에서 전송결과를 확인할 수 있습니다.
+전자명세서를 팩스로 전송하는 함수로, 팝빌에 데이터를 저장하는 과정이 없습니다.
+- 팝빌 사이트 [문자·팩스] > [팩스] > [전송내역] 메뉴에서 전송결과를 확인 할 수 있습니다.
+- 함수 호출시 포인트가 과금됩니다.
+- 선팩스 전송 요청 시 작성한 문서번호는 팩스로 전송되는 파일명에 사용됩니다.
+- 팩스 전송결과를 확인하기 위해서는 선팩스 전송 요청 시 반환받은 접수번호를 이용하여 팩스 API의 전송내역 확인 (GetFaxResult API) 함수를 이용하면 됩니다.
 - https://docs.popbill.com/statement/python/api#FAXSend
 '''
 
@@ -36,23 +38,23 @@ try:
     UserID = testValue.testUserID
 
     # 팩스발신번호
-    SendNum = "070-4304-2991"
+    SendNum = ""
 
     # 팩스수신번호
-    ReceiveNum = "070-111-222"
+    ReceiveNum = ""
 
     # 전자명세서 문서번호
-    mgtKey = "20210429-001"
+    mgtKey = "20220803-001"
 
     # 전자명세서 정보
     statement = Statement(
         # 작성일자 yyyyMMdd
-        writeDate="20210429",
+        writeDate="20220803",
 
-        # '영수'/'청구' 중 기재
+        # {영수, 청구, 없음} 중 기재
         purposeType="영수",
 
-        # 과세형태, '과세'/'영세'/'면세' 중 기재
+        # 과세형태, {과세, 영세, 면세} 중 기재
         taxType="과세",
 
         # 맞춤양식코드, 미기재시 기본양식으로 처리
@@ -89,13 +91,13 @@ try:
         senderContactName="발신자 담당자명",
 
         # 발신자 메일주소
-        senderEmail="test@test.com",
+        senderEmail="",
 
         # 발신자 연락처
-        senderTEL="070-4304-2991",
+        senderTEL="",
 
         # 발신자 휴대폰번호
-        senderHP="010-000-222",
+        senderHP="",
 
         # 수신자 사업자번호, '-' 제외 10자리
         receiverCorpNum="8888888888",
@@ -122,13 +124,13 @@ try:
         receiverContactName="수신자 담당자명",
 
         # 수신자  메일주소
-        receiverEmail="test@test.com",
+        receiverEmail="",
 
         # 수신자 연락처
-        receiverTEL="070111222",
+        receiverTEL="",
 
         # 수신자 휴대폰번호
-        receiverHP="010-111-222",
+        receiverHP="",
 
         # 공급가액 합계
         supplyCostTotal="20000",
@@ -147,11 +149,18 @@ try:
         remark2="비고2",
         remark3="비고3",
 
-        # 사업자등록증 이미지 첨부 여부
+        # 사업자등록증 이미지 첨부여부  (true / false 중 택 1)
+        # └ true = 첨부 , false = 미첨부(기본값)
+        # - 팝빌 사이트 또는 인감 및 첨부문서 등록 팝업 URL (GetSealURL API) 함수를 이용하여 등록
         businessLicenseYN=False,
 
-        # 통장사본 이미지 첨부 여부
+        # 통장사본 이미지 첨부여부  (true / false 중 택 1)
+        # └ true = 첨부 , false = 미첨부(기본값)
+        # - 팝빌 사이트 또는 인감 및 첨부문서 등록 팝업 URL (GetSealURL API) 함수를 이용하여 등록
         bankBookYN=False,
+
+        # 발행시 알림문자 전송여부
+        smssendYN=True
     )
 
     # 상세항목(품목) 정보 (배열 길이 제한 없음)
@@ -161,7 +170,7 @@ try:
         StatementDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20210429",  # 거래일자
+            purchaseDT="20220803",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량
@@ -173,7 +182,7 @@ try:
         StatementDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20210429",  # 거래일자
+            purchaseDT="20220803",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량

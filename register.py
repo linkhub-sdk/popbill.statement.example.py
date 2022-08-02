@@ -32,17 +32,17 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 전자명세서 문서번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
-    mgtKey = "20210429-12345"
+    mgtKey = "20220803-12345"
 
     # 전자명세서 정보
     statement = Statement(
         # 작성일자 yyyyMMdd
-        writeDate="20210428",
+        writeDate="20220803",
 
-        # '영수'/'청구' 중 기재
+        # {영수, 청구, 없음} 중 기재
         purposeType="영수",
 
-        # 과세형태, '과세'/'영세'/'면세' 중 기재
+        # 과세형태, {과세, 영세, 면세} 중 기재
         taxType="과세",
 
         # 맞춤양식코드, 미기재시 기본양식으로 처리
@@ -79,13 +79,13 @@ try:
         senderContactName="발신자 담당자명",
 
         # 발신자 메일주소
-        senderEmail="test@test.com",
+        senderEmail="",
 
         # 발신자 연락처
-        senderTEL="070-4304-2991",
+        senderTEL="",
 
         # 발신자 휴대폰번호
-        senderHP="010-000-222",
+        senderHP="",
 
         # 수신자 사업자번호, '-' 제외 10자리
         receiverCorpNum="8888888888",
@@ -114,13 +114,13 @@ try:
         # 수신자 메일주소
         # 팝빌 개발환경에서 테스트하는 경우에도 안내 메일이 전송되므로,
         # 실제 거래처의 메일주소가 기재되지 않도록 주의
-        receiverEmail="test@test.com",
+        receiverEmail="",
 
         # 수신자 연락처
-        receiverTEL="070111222",
+        receiverTEL="",
 
         # 수신자 휴대폰번호
-        receiverHP="010-111-222",
+        receiverHP="",
 
         # 공급가액 합계
         supplyCostTotal="20000",
@@ -139,11 +139,18 @@ try:
         remark2="비고2",
         remark3="비고3",
 
-        # 사업자등록증 이미지 첨부 여부
+        # 사업자등록증 이미지 첨부여부  (true / false 중 택 1)
+        # └ true = 첨부 , false = 미첨부(기본값)
+        # - 팝빌 사이트 또는 인감 및 첨부문서 등록 팝업 URL (GetSealURL API) 함수를 이용하여 등록
         businessLicenseYN=False,
 
-        # 통장사본 이미지 첨부 여부
+        # 통장사본 이미지 첨부여부  (true / false 중 택 1)
+        # └ true = 첨부 , false = 미첨부(기본값)
+        # - 팝빌 사이트 또는 인감 및 첨부문서 등록 팝업 URL (GetSealURL API) 함수를 이용하여 등록
         bankBookYN=False,
+
+        # 발행시 알림문자 전송여부
+        smssendYN=True
     )
 
     # 상세항목(품목) 정보 (배열 길이 제한 없음)
@@ -153,7 +160,7 @@ try:
         StatementDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20210429",  # 거래일자
+            purchaseDT="20220803",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량
@@ -171,7 +178,7 @@ try:
         StatementDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
             itemName="품목1",  # 품목
-            purchaseDT="20210429",  # 거래일자
+            purchaseDT="20220803",  # 거래일자
             spec="BOX",  # 규격
             unitCost="10000",  # 단가
             qty=1,  # 수량

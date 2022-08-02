@@ -20,8 +20,8 @@ statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-전자명세서 문서번호 중복여부를 확인합니다.
-- 문서번호는 1~24자리로 숫자, 영문 '-', '_' 조합으로 구성할 수 있습니다.
+파트너가 전자명세서 관리 목적으로 할당하는 문서번호의 사용여부를 확인합니다.
+- 이미 사용 중인 문서번호는 중복 사용이 불가하고, 전자명세서가 삭제된 경우에만 문서번호의 재사용이 가능합니다.
 - https://docs.popbill.com/statement/python/api#CheckMgtKeyInUse
 '''
 
@@ -35,7 +35,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
-    MgtKey = "20210429-01"
+    MgtKey = "20220803-001"
 
     bIsInUse = statementService.checkMgtKeyInUse(CorpNum, ItemCode, MgtKey)
     print("사용여부 : 사용중" if bIsInUse else "사용여부 : 미사용중")

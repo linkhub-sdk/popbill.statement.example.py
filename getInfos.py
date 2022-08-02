@@ -20,7 +20,7 @@ statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-다수건의 전자명세서 상태/요약 정보를 확인합니다.
+다수건의 전자명세서 상태 및 요약정보 확인합니다. (1회 호출 시 최대 1,000건 확인 가능)
 - https://docs.popbill.com/statement/python/api#GetInfos
 '''
 
@@ -35,9 +35,9 @@ try:
 
     # 문서번호 배열, 최대 1000건
     MgtKeyList = []
-    MgtKeyList.append("20210429-001")
-    MgtKeyList.append("20210429-002")
-    MgtKeyList.append("20210429-003")
+    MgtKeyList.append("20220803-001")
+    MgtKeyList.append("20220803-002")
+    MgtKeyList.append("20220803-003")
 
     InfoList = statementService.getInfos(CorpNum, ItemCode, MgtKeyList)
 
