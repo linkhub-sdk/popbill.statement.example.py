@@ -63,7 +63,7 @@ try:
         print ("stateDT (상태 변경일시): %s" % info.stateDT)
         print ("stateMemo (상태메모): %s" % info.stateMemo)
         print ("openYN (개봉 여부): %s" % info.openYN)
-        print ("openDT (개봉 일시): %s" % info.openDT) + '\n'
+        print ("openDT (개봉 일시): %s" % info.openDT + '\n')
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

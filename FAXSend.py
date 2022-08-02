@@ -41,7 +41,7 @@ try:
     ReceiveNum = ""
 
     # 전자명세서 문서번호
-    mgtKey = "20220803-001"
+    mgtKey = "20220803-003"
 
     # 전자명세서 정보
     statement = Statement(

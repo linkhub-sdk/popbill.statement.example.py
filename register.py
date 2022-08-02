@@ -32,7 +32,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 전자명세서 문서번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
-    mgtKey = "20220803-12345"
+    mgtKey = "20220803-001"
 
     # 전자명세서 정보
     statement = Statement(

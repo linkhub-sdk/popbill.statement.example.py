@@ -34,7 +34,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20220803-123"
+    MgtKey = "20220803-001"
 
     statement = statementService.getDetailInfo(CorpNum, ItemCode, MgtKey)
     print ("전자명세서 정보>")
@@ -51,7 +51,7 @@ try:
     print ("totalAmount(합계금액) : %s" % statement.totalAmount)
     print ("remark1(비고1) : %s" % statement.remark1)
     print ("remark2(비고2) : %s" % statement.remark2)
-    print ("remark3(비고3) : %s" % statement.remark3) + "\n"
+    print ("remark3(비고3) : %s" % statement.remark3 + "\n")
 
     print ("발신자 정보>")
     print ("senderCorpNum(발신자 사업자번호) : %s" % statement.senderCorpNum)
@@ -66,7 +66,7 @@ try:
     print ("senderTEL(발신자 연락처) : %s" % statement.senderTEL)
     print ("senderHP(발신자 휴대전화) : %s" % statement.senderHP)
     print ("senderEmail(발신자 이메일주소) : %s" % statement.senderEmail)
-    print ("senderFax(발신자 팩스번호) : %s" % statement.senderFax) + "\n"
+    print ("senderFax(발신자 팩스번호) : %s" % statement.senderFax + "\n")
 
     print ("수신자 정보>")
     print ("receiverCorpNum(수신자 사업자번호) : %s" % statement.receiverCorpNum)
@@ -81,13 +81,13 @@ try:
     print ("receiverTEL(수신자 연락처) : %s" % statement.receiverTEL)
     print ("receiverHP(수신자 휴대전화) : %s" % statement.receiverHP)
     print ("receiverEmail(수신자 이메일주소) : %s" % statement.receiverEmail)
-    print ("receiverFax(수신자 팩스번호) : %s" % statement.receiverFax) + "\n"
+    print ("receiverFax(수신자 팩스번호) : %s" % statement.receiverFax + "\n")
 
     print ("부가정보>")
     print ("businessLicenseYN(사업자등록증 첨부 여부) : %s" % statement.businessLicenseYN)
     print ("bankBookYN(통장사본 첨부 여부) : %s" % statement.bankBookYN)
     print ("smssendYN(문자 자동전송 여부) : %s" % statement.smssendYN)
-    print ("autoAcceptYN(발행시 자동승인 여부) : %s" % statement.autoAcceptYN) + "\n"
+    print ("autoAcceptYN(발행시 자동승인 여부) : %s" % statement.autoAcceptYN + "\n")
 
     print ("상세항목(품목) 정보>")
     for n in range(0, len(statement.detailList)):

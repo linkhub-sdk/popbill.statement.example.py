@@ -34,7 +34,7 @@ try:
     ItemCode = 121
 
     # 수정할 전자명세서 문서번호
-    mgtKey = "20220803-123"
+    mgtKey = "20220803-001"
 
     # 전자명세서 정보
     statement = Statement(

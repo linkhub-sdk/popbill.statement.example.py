@@ -40,7 +40,7 @@ try:
     SubItemCode = "121"
 
     # 첨부해제할 전자명세서 문서번호
-    SubMgtKey = "20220803-001"
+    SubMgtKey = "20220803-002"
 
     result = statementService.detachStatement(CorpNum, ItemCode, MgtKey, SubItemCode, SubMgtKey)
 

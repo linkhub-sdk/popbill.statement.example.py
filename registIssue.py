@@ -36,7 +36,7 @@ try:
     UserID = testValue.testUserID
 
     # 전자명세서 문서번호, 1~24자리, 영문,숫자,-,_ 조합으로 발신자별 고유번호 생성
-    mgtKey = ""
+    mgtKey = "20220803-002"
 
     # 메모
     Memo = "즉시발행 메모"
