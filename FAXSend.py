@@ -34,9 +34,6 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     # 팩스발신번호
     SendNum = ""
 
@@ -198,7 +195,7 @@ try:
         'CBalance': "25000"  # 현잔액
     }
 
-    result = statementService.FAXSend(CorpNum, statement, SendNum, ReceiveNum, UserID)
+    result = statementService.FAXSend(CorpNum, statement, SendNum, ReceiveNum)
 
     print("팩스 접수번호 : " + result)
 

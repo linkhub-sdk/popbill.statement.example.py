@@ -30,9 +30,6 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     # 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서, 125-입금표, 126-영수증
     ItemCode = "121"
 
@@ -45,7 +42,7 @@ try:
     # 첨부해제할 전자명세서 문서번호
     SubMgtKey = "20220803-001"
 
-    result = statementService.detachStatement(CorpNum, ItemCode, MgtKey, SubItemCode, SubMgtKey, UserID)
+    result = statementService.detachStatement(CorpNum, ItemCode, MgtKey, SubItemCode, SubMgtKey)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:

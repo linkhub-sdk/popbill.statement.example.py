@@ -39,10 +39,7 @@ try:
     # 첨부할 파일의 파일 경로
     FilePath = "test.jpeg"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = statementService.attachFile(CorpNum, ItemCode, MgtKey, FilePath, UserID)
+    result = statementService.attachFile(CorpNum, ItemCode, MgtKey, FilePath)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 

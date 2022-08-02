@@ -31,13 +31,16 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
     # 명세서 코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서, 125-입금표, 126-영수증
     ItemCode = 121
 
     # 전자명세서 문서번호
     MgtKey = "20220803-001"
 
-    url = statementService.getViewURL(CorpNum, ItemCode, MgtKey)
+    url = statementService.getViewURL(CorpNum, ItemCode, MgtKey, UserID)
     print("URL: %s" % url)
 
 except PopbillException as PE:

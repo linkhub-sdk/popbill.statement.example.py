@@ -40,10 +40,7 @@ try:
     # 삭제할 FileID, 첨부파일목록(getFiles API) 응답 전문의 attachedFile 값
     FileID = "4DB71521-DC61-43EB-A061-DB0987ABACAB.PBF"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = statementService.deleteFile(CorpNum, ItemCode, MgtKey, FileID, UserID)
+    result = statementService.deleteFile(CorpNum, ItemCode, MgtKey, FileID)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 

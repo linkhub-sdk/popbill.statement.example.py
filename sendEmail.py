@@ -39,10 +39,7 @@ try:
     # 수신메일주소
     ReceiverMail = ""
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = statementService.sendEmail(CorpNum, ItemCode, MgtKey, ReceiverMail, UserID)
+    result = statementService.sendEmail(CorpNum, ItemCode, MgtKey, ReceiverMail)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:

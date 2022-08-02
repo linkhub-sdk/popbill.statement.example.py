@@ -43,10 +43,7 @@ try:
     # 수신번호
     Receiver = ""
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = statementService.sendFAX(CorpNum, ItemCode, MgtKey, Sender, Receiver, UserID)
+    result = statementService.sendFAX(CorpNum, ItemCode, MgtKey, Sender, Receiver)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:

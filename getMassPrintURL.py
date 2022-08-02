@@ -31,6 +31,9 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
     # 명세서 코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서, 125-입금표, 126-영수증
     ItemCode = 121
 
@@ -40,7 +43,7 @@ try:
     MgtKeyList.append("20220803-002")
     MgtKeyList.append("20220803-003")
 
-    url = statementService.getMassPrintURL(CorpNum, ItemCode, MgtKeyList)
+    url = statementService.getMassPrintURL(CorpNum, ItemCode, MgtKeyList, UserID)
     print("URL: %s" % url)
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))
