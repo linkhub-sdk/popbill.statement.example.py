@@ -20,8 +20,8 @@ statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-전자명세서 1건을 임시저장합니다.
-- 임시저장 상태의 명세서는 발행(Issue API)을 호출해야 수신자에게 메일이 전송됩니다.
+작성된 전자명세서 데이터를 팝빌에 저장합니다.
+- "임시저장" 상태의 전자명세서는 발행(Issue API) 함수를 호출하여 "발행완료" 처리한 경우에만 수신자에게 발행 안내 메일이 발송됩니다.
 - https://docs.popbill.com/statement/python/api#Register
 '''
 

@@ -20,7 +20,7 @@ statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-전자명세서 1건의 상세정보를 조회합니다.
+전자명세서 1건의 상세정보 확인합니다.
 - https://docs.popbill.com/statement/python/api#GetDetailInfo
 '''
 

@@ -20,7 +20,7 @@ statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-전자명세서에 첨부된 다른 전자명세서를 첨부해제합니다.
+하나의 전자명세서에 첨부된 다른 전자명세서를 해제합니다.
 - https://docs.popbill.com/statement/python/api#DetachStatement
 '''
 
