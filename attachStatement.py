@@ -21,7 +21,7 @@ statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 하나의 전자명세서에 다른 전자명세서 1건을 첨부합니다.
-- https://docs.popbill.com/statement/python/api#AttachStatement
+- https://developers.popbill.com/reference/statement/python/api/etc#AttachStatement
 '''
 
 try:

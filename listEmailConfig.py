@@ -21,7 +21,7 @@ statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 전자명세서 관련 메일 항목에 대한 발송설정을 확인합니다.
-- https://docs.popbill.com/statement/python/api#ListEmailConfig
+- https://developers.popbill.com/reference/statement/python/api/etc#ListEmailConfig
 '''
 
 try:

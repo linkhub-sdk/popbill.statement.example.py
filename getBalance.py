@@ -21,7 +21,7 @@ statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 연동회원의 잔여포인트를 확인합니다.
-- https://docs.popbill.com/statement/python/api#GetBalance
+- https://developers.popbill.com/reference/statement/python/api/point#GetBalance
 '''
 
 try:

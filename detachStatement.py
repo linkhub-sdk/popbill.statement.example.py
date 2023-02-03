@@ -21,7 +21,7 @@ statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 하나의 전자명세서에 첨부된 다른 전자명세서를 해제합니다.
-- https://docs.popbill.com/statement/python/api#DetachStatement
+- https://developers.popbill.com/reference/statement/python/api/etc#DetachStatement
 '''
 
 try:

@@ -21,7 +21,7 @@ statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 "임시저장" 상태의 명세서에 1개의 파일을 첨부합니다. (최대 5개)
-- https://docs.popbill.com/statement/python/api#AttachFile
+- https://developers.popbill.com/reference/statement/python/api/etc#AttachFile
 '''
 
 try:

@@ -21,7 +21,7 @@ statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 검색조건을 사용하여 전자명세서 목록을 조회합니다. (조회기간 단위 : 최대 6개월)
-- https://docs.popbill.com/statement/python/api#Search
+- https://developers.popbill.com/reference/statement/python/api/info#Search
 '''
 
 try:

@@ -21,7 +21,7 @@ statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 "임시저장" 상태의 전자명세서를 수정합니다.
-- https://docs.popbill.com/statement/python/api#Update
+- https://developers.popbill.com/reference/statement/python/api/issue#Update
 '''
 
 try:

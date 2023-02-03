@@ -21,7 +21,7 @@ statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 1건의 전자명세서 상태/요약 정보를 확인합니다.
-- https://docs.popbill.com/statement/python/api#GetInfo
+- https://developers.popbill.com/reference/statement/python/api/info#GetInfo
 '''
 
 try:
