@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,11 +19,11 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 삭제 가능한 상태의 전자명세서를 삭제합니다.
 - 삭제 가능한 상태: "임시저장", "취소", "승인거부", "발행취소"
 - https://developers.popbill.com/reference/statement/python/api/issue#Delete
-'''
+"""
 
 try:
     print("=" * 15 + " 전자명세서 삭제 " + "=" * 15)

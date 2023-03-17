@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 검색조건을 사용하여 전자명세서 목록을 조회합니다. (조회기간 단위 : 최대 6개월)
 - https://developers.popbill.com/reference/statement/python/api/info#Search
-'''
+"""
 
 try:
     print("=" * 15 + " 문서 조회 " + "=" * 15)
@@ -64,8 +64,19 @@ try:
     # - 미입력시 전체조회
     QString = ""
 
-    response = statementService.search(CorpNum, DType, SDate, EDate, State, ItemCode,
-                                       Page, PerPage, Order, UserID, QString)
+    response = statementService.search(
+        CorpNum,
+        DType,
+        SDate,
+        EDate,
+        State,
+        ItemCode,
+        Page,
+        PerPage,
+        Order,
+        UserID,
+        QString,
+    )
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
@@ -97,7 +108,7 @@ try:
         print("stateDT (상태 변경일시) : %s" % info.stateDT)
         print("stateMemo (상태메모) : %s" % info.stateMemo)
         print("openYN (개봉 여부) : %s" % info.openYN)
-        print("openDT (개봉 일시) : %s" % info.openDT + '\n')
+        print("openDT (개봉 일시) : %s" % info.openDT + "\n")
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

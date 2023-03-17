@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,12 +19,12 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 "공급받는자" 용 전자명세서 1건을 인쇄하기 위한 페이지의 팝업 URL을 반환합니다.
 - 반환되는 URL은 보안 정책상 30초 동안 유효하며, 시간을 초과한 후에는 해당 URL을 통한 페이지 접근이 불가합니다.
 - 전자명세서의 공급받는자는 "수신자"를 나타내는 용어입니다.
 - https://developers.popbill.com/reference/statement/python/api/view#GetEPrintURL
-'''
+"""
 
 try:
     print("=" * 15 + " 전자명세서 수신자 인쇄 팝업 URL " + "=" * 15)

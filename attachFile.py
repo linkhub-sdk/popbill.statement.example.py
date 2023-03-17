@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 "임시저장" 상태의 명세서에 1개의 파일을 첨부합니다. (최대 5개)
 - https://developers.popbill.com/reference/statement/python/api/etc#AttachFile
-'''
+"""
 
 try:
     print("=" * 15 + " 전자명세서 첨부파일 등록 " + "=" * 15)

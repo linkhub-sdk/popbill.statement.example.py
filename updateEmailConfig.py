@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,7 +19,7 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 전자명세서 관련 메일전송 항목에 대한 전송여부를 수정합니다.
 - https://developers.popbill.com/reference/statement/python/api/etc#UpdateEmailConfig
 
@@ -29,7 +29,7 @@ SMT_ACCEPT : 발신자에게 전자명세서가 승인 되었음을 알려주는
 SMT_DENY : 발신자에게 전자명세서가 거부 되었음을 알려주는 메일입니다.
 SMT_CANCEL : 수신자에게 전자명세서가 취소 되었음을 알려주는 메일입니다.
 SMT_CANCEL_ISSUE : 수신자에게 전자명세서가 발행취소 되었음을 알려주는 메일입니다.
-'''
+"""
 
 try:
     print("=" * 15 + " 전자명세서 메일전송여부 수정 " + "=" * 15)
@@ -38,7 +38,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 메일 전송 유형
-    EmailType = 'SMT_ISSUE'
+    EmailType = "SMT_ISSUE"
 
     # 전송 여부 (True = 전송, False = 미전송)
     SendYN = True

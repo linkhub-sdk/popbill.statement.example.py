@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 하나의 전자명세서에 첨부된 다른 전자명세서를 해제합니다.
 - https://developers.popbill.com/reference/statement/python/api/etc#DetachStatement
-'''
+"""
 
 try:
     print("=" * 15 + " 다른전자명세서 첨부 " + "=" * 15)
@@ -42,7 +42,9 @@ try:
     # 첨부해제할 전자명세서 문서번호
     SubMgtKey = "20220803-002"
 
-    result = statementService.detachStatement(CorpNum, ItemCode, MgtKey, SubItemCode, SubMgtKey)
+    result = statementService.detachStatement(
+        CorpNum, ItemCode, MgtKey, SubItemCode, SubMgtKey
+    )
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:

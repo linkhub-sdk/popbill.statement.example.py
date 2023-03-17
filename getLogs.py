@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 전자명세서의 상태에 대한 변경이력을 확인합니다.
 - https://developers.popbill.com/reference/statement/python/api/info#GetLogs
-'''
+"""
 
 try:
     print("=" * 15 + " 전자명세서 상태변경 이력 " + "=" * 15)

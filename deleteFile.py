@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,11 +19,11 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 "임시저장" 상태의 전자명세서에 첨부된 1개의 파일을 삭제합니다.
 - 파일 식별을 위해 첨부시 부여되는 'FileID'는 첨부파일 목록 확인(GetFiles API) 함수를 호출하여 확인합니다.
 - https://developers.popbill.com/reference/statement/python/api/etc#DeleteFile
-'''
+"""
 
 try:
     print("=" * 15 + " 전자명세서 첨부파일 삭제 " + "=" * 15)

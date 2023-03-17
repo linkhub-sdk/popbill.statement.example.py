@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding("UTF8")
+except Exception as E:
+    pass
 
 import testValue
 
@@ -16,11 +19,11 @@ statementService.IPRestrictOnOff = testValue.IPRestrictOnOff
 statementService.UseStaticIP = testValue.UseStaticIP
 statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 전자명세서 안내메일의 상세보기 링크 URL을 반환합니다.
 - 함수 호출로 반환 받은 URL에는 유효시간이 없습니다.
 - https://developers.popbill.com/reference/statement/python/api/view#GetMailURL
-'''
+"""
 
 try:
     print("=" * 15 + " 전자명세서 메일 링크 URL " + "=" * 15)
@@ -41,4 +44,4 @@ try:
     print("URL: %s" % url)
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
