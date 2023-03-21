@@ -174,9 +174,7 @@ try:
         "CBalance": "25000",  # 현잔액
     }
 
-    result = statementService.registIssue(
-        CorpNum, statement, Memo, UserID, EmailSubject
-    )
+    result = statementService.registIssue(CorpNum, statement, Memo, UserID, EmailSubject)
 
     print("처리결과 : [%d] %s %s" % (result.code, result.message, result.invoiceNum))
 

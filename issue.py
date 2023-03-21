@@ -38,13 +38,17 @@ try:
     # 전자명세서 문서번호
     MgtKey = "20220803-001"
 
+    #전자명세서 상태 이력을 관리하기 위한 메모
+    Memo = ""
+
     # 전자명세서 발행 안내메일 제목
     # ※ 미입력시 팝빌에서 지정한 이메일 제목으로 전송
     EmailSubject = ""
 
-    result = statementService.issue(
-        CorpNum, ItemCode, MgtKey, EmailSubject=EmailSubject
-    )
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    result = statementService.issue(CorpNum, ItemCode, MgtKey, Memo, EmailSubject, UserID)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 
