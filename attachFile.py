@@ -41,7 +41,7 @@ try:
     # 첨부파일명
     DisplayName = "Dispay.jpeg"
 
-    result = statementService.attachFile(CorpNum, ItemCode, MgtKey, FilePath, DisplayName)
+    result = statementService.attachFile(CorpNum, ItemCode, MgtKey, FilePath, None, DisplayName)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 
