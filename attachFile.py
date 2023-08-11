@@ -38,7 +38,10 @@ try:
     # 첨부할 파일의 파일 경로
     FilePath = "test.jpeg"
 
-    result = statementService.attachFile(CorpNum, ItemCode, MgtKey, FilePath)
+    # 첨부파일명
+    DisplayName = "Dispay.jpeg"
+
+    result = statementService.attachFile(CorpNum, ItemCode, MgtKey, FilePath, DisplayName)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 
