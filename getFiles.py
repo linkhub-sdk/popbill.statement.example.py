@@ -42,8 +42,8 @@ try:
     for f in fileList:
         print("%d:" % i)
         print("    serialNum(첨부파일 일련번호) : %s" % f.serialNum)
-        print("    attachedFile(파일아이디-첨부파일 삭제시 사용) : %s" % f.attachedFile)
-        print("    displayName(첨부파일명) : %s" % f.displayName)
+        print("    attachedFile(파일 식별번호) : %s" % f.attachedFile)
+        print("    displayName(파일명) : %s" % f.displayName)
         print("    regDT(첨부일시) : %s" % f.regDT)
         i += 1
 

@@ -20,7 +20,7 @@ statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
 사용하고자 하는 아이디의 중복여부를 확인합니다.
-- https://developers.popbill.com/reference/statement/python/api/member#CheckID
+- https://developers.popbill.com/reference/statement/python/common-api/member#CheckID
 """
 
 try:
@@ -32,5 +32,6 @@ try:
     response = statementService.checkID(memberID)
 
     print("처리결과 : [%d] %s" % (response.code, response.message))
+    
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

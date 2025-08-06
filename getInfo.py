@@ -37,19 +37,21 @@ try:
 
     statementInfo = statementService.getInfo(CorpNum, ItemCode, MgtKey)
 
-    print("itemCode (문서종류코드): %s" % statementInfo.itemCode)
+    print("itemCode (전자명세서 문서 유형): %s" % statementInfo.itemCode)
     print("itemKey (팝빌번호): %s" % statementInfo.itemKey)
     print("invoiceNum (팝빌승인번호): %s" % statementInfo.invoiceNum)
     print("mgtKey (문서번호): %s" % statementInfo.mgtKey)
-    print("taxType (세금형태): %s" % statementInfo.taxType)
+    print("taxType (과세형태): %s" % statementInfo.taxType)
     print("writeDate (작성일자): %s" % statementInfo.writeDate)
     print("regDT (임시저장일시): %s" % statementInfo.regDT)
+
     print("senderCorpName (발신자 상호): %s" % statementInfo.senderCorpName)
     print("senderCorpNum (발신자 사업자등록번호): %s" % statementInfo.senderCorpNum)
     print("senderPrintYN (발신자 인쇄여부): %s" % statementInfo.senderPrintYN)
     print("receiverCorpName (수신자 상호): %s" % statementInfo.receiverCorpName)
     print("receiverCorpNum (수신자 사업자등록번호): %s" % statementInfo.receiverCorpNum)
     print("receiverPrintYN (수신자 인쇄여부): %s" % statementInfo.receiverPrintYN)
+    
     print("supplyCostTotal (공급가액 합계): %s" % statementInfo.supplyCostTotal)
     print("taxTotal (세액 합계): %s" % statementInfo.taxTotal)
     print("purposeType (영수/청구): %s" % statementInfo.purposeType)

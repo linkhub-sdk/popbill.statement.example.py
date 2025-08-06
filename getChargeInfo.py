@@ -20,7 +20,7 @@ statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
 전자명세서 API 서비스 과금정보를 확인합니다.
-- https://developers.popbill.com/reference/statement/python/api/point#GetChargeInfo
+- https://developers.popbill.com/reference/statement/python/common-api/point#GetChargeInfo
 """
 
 try:

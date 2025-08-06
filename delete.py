@@ -39,5 +39,6 @@ try:
     result = statementService.delete(CorpNum, ItemCode, MgtKey)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
+    
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

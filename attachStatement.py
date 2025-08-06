@@ -41,10 +41,9 @@ try:
     # 첨부할 전자명세서 문서번호
     SubMgtKey = "20220803-002"
 
-    result = statementService.attachStatement(
-        CorpNum, ItemCode, MgtKey, SubItemCode, SubMgtKey
-    )
+    result = statementService.attachStatement(CorpNum, ItemCode, MgtKey, SubItemCode, SubMgtKey)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
+    
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

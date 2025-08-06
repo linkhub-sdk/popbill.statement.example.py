@@ -33,7 +33,7 @@ try:
     ItemCode = 121
 
     # 전자명세서 문서번호
-    MgtKey = "20220803-001"
+    MgtKey = "20250723-TEST-707"
 
     LogList = statementService.getLogs(CorpNum, ItemCode, MgtKey)
 
@@ -43,9 +43,9 @@ try:
         print("    docLogType(로그타입) : %s" % f.docLogType)
         print("    log(이력정보) : %s" % f.log)
         print("    procType(처리형태) : %s" % f.procType)
-        print("    procCorpName(처리담당자) : %s" % f.procCorpName)
         print("    procMemo(처리메모) : %s" % f.procMemo)
         print("    regDT(등록일시) : %s" % f.regDT)
+        print("    ip(등록일시) : %s" % f.ip +'\n')
         i += 1
 
 except PopbillException as PE:

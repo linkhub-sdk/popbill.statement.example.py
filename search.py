@@ -36,10 +36,10 @@ try:
     DType = "W"
 
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20241201"
+    SDate = "20250801"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20241231"
+    EDate = "20250831"
 
     # 전자명세서 상태코드 배열 (2,3번째 자리에 와일드카드(*) 사용 가능)
     # - 미입력시 전체조회
@@ -80,17 +80,16 @@ try:
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
     print("total (검색결과 건수) : %s " % response.total)
-    print("perPage (페이지당 검색개수) : %s " % response.perPage)
+    print("perPage (페이지당 목록 건수) : %s " % response.perPage)
     print("pageNum (페에지 번호) : %s " % response.pageNum)
     print("pageCount (페이지 개수) : %s \n" % response.pageCount)
 
     for info in response.list:
-        print("====== 전자명세서 정보 ======")
-        print("itemCode (문서종류코드) : %s" % info.itemCode)
+        print("itemCode (전자명세서 문서 유형) : %s" % info.itemCode)
         print("itemkey (팝빌번호) : %s" % info.itemKey)
-        print("invoiceNum (팝빌승인번호) : %s" % info.invoiceNum)
+        print("invoiceNum (팝빌 승인번호) : %s" % info.invoiceNum)
         print("mgtKey (문서번호) : %s" % info.mgtKey)
-        print("taxType (세금형태) : %s" % info.taxType)
+        print("taxType (과세형태) : %s" % info.taxType)
         print("writeDate (작성일자) : %s" % info.writeDate)
         print("regDT (임시저장일시) : %s" % info.regDT)
         print("senderCorpName (발신자 상호) : %s" % info.senderCorpName)
@@ -99,9 +98,11 @@ try:
         print("receiverCorpName (수신자 상호) : %s" % info.receiverCorpName)
         print("receiverCorpNum (수신자 사업자등록번호) : %s" % info.receiverCorpNum)
         print("receiverPrintYN (수신자 인쇄여부) : %s" % info.receiverPrintYN)
+
         print("supplyCostTotal (공급가액 합계) : %s" % info.supplyCostTotal)
         print("taxTotal (세액 합계) : %s" % info.taxTotal)
         print("purposeType (영수/청구) : %s" % info.purposeType)
+
         print("issueDT (발행일시) : %s" % info.issueDT)
         print("stateCode (상태코드) : %s" % info.stateCode)
         print("stateDT (상태 변경일시) : %s" % info.stateDT)

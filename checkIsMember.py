@@ -20,7 +20,7 @@ statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
 사업자번호를 조회하여 연동회원 가입여부를 확인합니다.
-- https://developers.popbill.com/reference/statement/python/api/member#CheckIsMember
+- https://developers.popbill.com/reference/statement/python/common-api/member#CheckIsMember
 """
 
 try:
@@ -32,5 +32,6 @@ try:
     result = statementService.checkIsMember(CorpNum)
 
     print("가입여부 확인 : [%d] %s" % (result.code, result.message))
+    
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

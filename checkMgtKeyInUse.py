@@ -37,6 +37,8 @@ try:
     MgtKey = "20220803-001"
 
     bIsInUse = statementService.checkMgtKeyInUse(CorpNum, ItemCode, MgtKey)
+
     print("사용여부 : 사용중" if bIsInUse else "사용여부 : 미사용중")
+    
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

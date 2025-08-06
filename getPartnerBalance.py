@@ -20,7 +20,7 @@ statementService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
 파트너의 잔여포인트를 확인합니다.
-- https://developers.popbill.com/reference/statement/python/api/point#GetPartnerBalance
+- https://developers.popbill.com/reference/statement/python/common-api/point#GetPartnerBalance
 """
 
 try:
